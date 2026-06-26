@@ -27,9 +27,10 @@ conclusão, plano). Veja um exemplo completo em `examples/dados-exemplo.json`.
     "lede": "texto de abertura (aceita <b>)",
     "stamps": [                    // métricas do topo (até ~5)
       {"k":"Período","v":"28/05–24/06"},
-      {"k":"Investido","v":"R$ 2.247"},
-      {"k":"Leads","v":"226"},
-      {"k":"MQL","v":"51","small":"23%"}   // "small" = nota ao lado
+      {"k":"Leads","v":"226","delta":"+18% vs mês ant.","bom":true},
+      {"k":"MQL","v":"51","small":"23%","delta":"+34% vs mês ant.","bom":true}
+      // "small" = nota ao lado; "delta" = comparação vs período anterior;
+      // "bom": true (verde ▲) | false (vermelho ▼) | ausente (neutro)
     ]
   },
   "funis": [
@@ -73,6 +74,37 @@ conclusão, plano). Veja um exemplo completo em `examples/dados-exemplo.json`.
 ```jsonc
 {"nome":"Cliente","status":"hot","status_label":"contrato na rua","desc":"..."}
 // status: "hot" (verde) | "warm" (âmbar) | "cold" (vermelho)
+```
+
+## resultado (opcional) — o retorno em R$ (ROI/ROAS/CAC/ticket)
+Seção de KPIs em dinheiro, logo após os funis. Mostra que volume virou caixa.
+```jsonc
+"resultado": {
+  "titulo":"O retorno em dinheiro", "sub":"...",
+  "kpis":[
+    {"label":"Receita fechada","valor":"R$ 9.600","delta":"1 contrato","bom":true},
+    {"label":"ROAS","valor":"4,3x","delta":"+0,8x vs mês ant.","bom":true,"meta":"meta: 4,0x"},
+    {"label":"CAC","valor":"R$ 2.247","delta":"cai com os em rota","bom":true}
+    // "bom": true (verde ▲) | false (vermelho ▼) | ausente; "meta" e "delta" opcionais
+  ]
+}
+```
+
+## tabelas (opcional) — atribuição e por-closer
+Tabelas genéricas após o resultado. Use para **atribuição lead→venda** (cruzando
+Meta+CRM) e **desempenho por closer** (liga à suíte ordem-skills; cite o ciclo de
+venda no `sub`).
+```jsonc
+"tabelas":[
+  {"cor":"marketing","pill":"Atribuição","eyebrow":"De onde veio o que fechou",
+   "titulo":"Lead → venda (closed-loop)","sub":"...",
+   "colunas":["Campanha","Leads","MQL","Contrato"],
+   "linhas":[["Faturamento +100k","78","32","1"], ["Aberta","126","17","0"]]},
+  {"cor":"comercial","pill":"Por closer","eyebrow":"...","titulo":"Quem converte melhor",
+   "colunas":["Closer","MQL","Agendou","Fechou","Taxa"],
+   "linhas":[["Marina","27","8","1","30%"]]}
+]
+// cor: "marketing" | "comercial" | "vendas" (cor do eyebrow). Conteúdo é escapado.
 ```
 
 ## Regras importantes

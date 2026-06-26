@@ -26,10 +26,22 @@ cliente quando ele tiver nomes próprios para as etapas.
 - **Fechamento** = contratos / propostas (ou / R1).
 - **Pipeline ativo** — deals em aberto (não somam como venda ainda).
 
-## Resultado (quando houver valor)
+## Resultado (quando houver valor) — o que mais vende a agência
 - **Receita** = soma dos contratos fechados.
 - **ROAS** = receita / investido. **CAC** = investido / clientes.
 - **Ticket** = valor médio por contrato.
+- **Pipeline (potencial)** = soma dos deals em aberto (não conta como receita).
+
+## Comparação, atribuição e ciclo
+- **vs período anterior** — traga o mesmo número do período anterior e mostre o delta
+  (▲/▼ %). "+34% vs mês anterior" convence mais que "51".
+- **Realizado x meta** — compare com a meta do período (ex.: ROAS 4,3x vs meta 4,0x).
+- **Atribuição (closed-loop)** — cruze Meta (campanha) com o CRM (resultado) pela
+  chave telefone/e-mail/`leadgen_id`. Mostra qual campanha gera **MQL e contrato**,
+  não só lead. É o maior valor de ter BM+CRM juntos.
+- **Ciclo de venda** = tempo médio do MQL ao fechamento (dias).
+- **Por closer** — atendidos, agendou, proposta, fechou e taxa por pessoa. Liga ao
+  treino na suíte `ordem-skills`.
 
 > Sempre marque o **ponto de maior vazamento** (a etapa com pior conversão relativa)
 > — é o que orienta o plano de ação.

@@ -14,9 +14,9 @@
     "lede": "30 dias de operação lidos em três camadas: o <b>funil de vendas</b> (visão geral), o <b>funil de marketing</b> (topo) e o <b>funil comercial</b> (fundo). Cada um com sua leitura e seu próprio ponto de melhoria.",
     "stamps": [
       {"k": "Período", "v": "28/05–24/06"},
-      {"k": "Investido", "v": "R$ 2.247"},
-      {"k": "Leads", "v": "226"},
-      {"k": "MQL", "v": "51", "small": "23%"},
+      {"k": "Investido", "v": "R$ 2.247", "delta": "vs R$ 2.010 (mês ant.)", "bom": false},
+      {"k": "Leads", "v": "226", "delta": "+18% vs mês ant.", "bom": true},
+      {"k": "MQL", "v": "51", "small": "23%", "delta": "+34% vs mês ant.", "bom": true},
       {"k": "Em rota", "v": "4", "small": "+1 contrato"}
     ]
   },
@@ -88,6 +88,39 @@
         {"nome": "Rigel · Adilson", "status": "warm", "status_label": "decisão em comitê", "desc": "Sócio muito interessado; os outros acham caro / querem testar Google. Reunião dos sócios no sábado."},
         {"nome": "Clóvis", "status": "cold", "status_label": "proposta · incerto", "desc": "Gostou da solução, mas achou caro (vem de prejuízos com agências anteriores). Aguardando retorno."},
         {"nome": "LC", "status": "hot", "status_label": "R2 com sócio", "desc": "R1 com a secretária, que amou e repassou internamente. R2 com o sócio agendada — sinal forte de fit."}
+      ]
+    }
+  ],
+  "resultado": {
+    "titulo": "O retorno em dinheiro",
+    "sub": "Os números de volume só importam se viram caixa. Ticket médio, receita fechada no período e o que isso representa sobre o investido.",
+    "kpis": [
+      {"label": "Receita fechada", "valor": "R$ 9.600", "delta": "1 contrato (ticket R$ 9,6k)", "bom": true},
+      {"label": "ROAS", "valor": "4,3x", "delta": "+0,8x vs mês ant.", "bom": true, "meta": "meta: 4,0x"},
+      {"label": "CAC", "valor": "R$ 2.247", "delta": "cai com os 4 em rota", "bom": true, "meta": "ticket 4,3x o CAC"},
+      {"label": "Em rota (potencial)", "valor": "R$ 38k", "delta": "4 deals no pipeline", "meta": "se 2 fecham: ROAS ~12x"}
+    ]
+  },
+  "tabelas": [
+    {
+      "cor": "marketing", "pill": "Atribuição", "eyebrow": "De onde veio o que fechou",
+      "titulo": "Lead → venda (closed-loop)",
+      "sub": "Cruzando Meta (campanha) com o CRM (resultado) pelo telefone/leadgen_id. Mostra qual campanha gera não só lead, mas MQL e contrato.",
+      "colunas": ["Campanha", "Leads", "MQL", "Em rota", "Contrato"],
+      "linhas": [
+        ["Faturamento +100k", "78", "32", "3", "1"],
+        ["Aberta (geral)", "126", "17", "1", "0"],
+        ["Remarketing", "22", "2", "0", "0"]
+      ]
+    },
+    {
+      "cor": "comercial", "pill": "Por closer", "eyebrow": "Desempenho comercial individual",
+      "titulo": "Quem converte melhor",
+      "sub": "Liga ao ciclo de venda: tempo médio do MQL ao fechamento em 18 dias. Use junto com a suíte ordem-skills para treinar o ponto fraco de cada um.",
+      "colunas": ["Closer", "MQL atend.", "Agendou", "Proposta", "Fechou", "Taxa"],
+      "linhas": [
+        ["Marina", "27", "8", "2", "1", "30%"],
+        ["Diego", "24", "3", "1", "0", "13%"]
       ]
     }
   ],

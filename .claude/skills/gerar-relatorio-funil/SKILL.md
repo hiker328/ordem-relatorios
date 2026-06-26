@@ -30,6 +30,11 @@ Siga o esquema em `references/estrutura-dados.md` (e o exemplo
 - **etapas** de cada funil com `valor`, `nota` e o vazamento marcado (`tipo:"leak"`).
 - **cards** de risco/força/nota (o "porquê" dos números) — baseados em evidência.
 - **pipeline** dos deals em aberto (nome, status, observação).
+- **resultado** (opcional): KPIs em R$ — receita, ROAS, CAC, ticket — com **delta
+  vs período anterior** (`bom` verde/vermelho) e **meta**. É o que mais vende a agência.
+- **tabelas** (opcional): **atribuição lead→venda** (cruzar Meta+CRM) e **por closer**
+  (cite o ciclo de venda; conecta à suíte `ordem-skills`).
+- **stamps** do cabeçalho aceitam `delta`/`bom` para comparação vs período anterior.
 - **conclusao** e **plano** (ações por setor, com prazo).
 Use as fórmulas de `references/metricas.md` para as taxas e para achar o vazamento.
 

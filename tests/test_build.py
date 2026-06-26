@@ -27,52 +27,61 @@ def test_num():
     assert br.num(51) == 51
 
 
-def test_stamp_value_conta_numero():
-    out = br.stamp_value("226", animate=True)
+def test_count_span_conta_numero():
+    out = br.count_span("226", animate=True)
     assert "js-count" in out and "226" in out
 
 
-def test_stamp_value_ignora_data():
-    out = br.stamp_value("28/05–24/06", animate=True)
-    assert "js-count" not in out
+def test_count_span_ignora_data():
+    assert "js-count" not in br.count_span("28/05–24/06", animate=True)
 
 
-def test_stamp_value_sem_anim():
-    assert br.stamp_value("226", animate=False) == "226"
+def test_count_span_sem_anim():
+    assert br.count_span("226", animate=False) == "226"
 
 
-def test_funnel_svg_tem_poligonos_e_gradientes():
+def test_hfunnel_poligonos_e_gradientes():
     etapas = [{"nome": "A", "valor": "100"}, {"nome": "B", "valor": "50"}]
-    svg = br.funnel_svg(etapas, "gX", ("#111", "#222"), ("#333", "#444"), animate=True)
+    svg = br.hfunnel_svg(etapas, "gX", ("#111", "#222"), ("#333", "#444"), animate=True)
     assert svg.count("<polygon") == 2
     assert 'id="gX_m"' in svg and 'id="gX_c"' in svg
-    assert "fpoly" in svg  # classe de animação
+    assert "fpoly" in svg
+
+
+def test_vfunnel_handoff():
+    etapas = [{"nome": "Lead", "valor": "100", "fase": "mkt"},
+              {"nome": "MQL", "valor": "50", "fase": "mkt"},
+              {"nome": "Venda", "valor": "5", "fase": "com"}]
+    svg = br.vfunnel_svg(etapas, "gV", ("#1", "#2"), ("#3", "#4"), animate=False)
+    assert svg.count("<polygon") == 3
+    assert "HANDOFF" in svg  # divisor marketing -> comercial
 
 
 def test_escape_em_nome():
-    etapas = [{"nome": "<script>", "valor": "1"}]
-    svg = br.funnel_svg(etapas, "gY", ("#1", "#2"), ("#3", "#4"), animate=False)
+    svg = br.hfunnel_svg([{"nome": "<script>", "valor": "1"}], "gY",
+                         ("#1", "#2"), ("#3", "#4"), animate=False)
     assert "<script>" not in svg
-    assert "&LT;SCRIPT&GT;" in svg.upper()  # escapado e uppercased no rótulo
+    assert "&LT;SCRIPT&GT;" in svg.upper()
 
 
 def test_render_exemplo_completo():
     dados = json.loads(EX.read_text(encoding="utf-8"))
     html = br.render(dados, animate=True)
     assert html.startswith("<!DOCTYPE html>")
-    assert "{" not in html.split("<style>")[0]  # sem placeholders no topo
-    # 9 + 4 + 6 etapas = 19 polígonos
-    assert html.count("<polygon") == 19
-    # 3 funis x 2 gradientes = 6
-    assert html.count("<linearGradient") == 6
-    assert "IntersectionObserver" in html  # JS de animação presente
+    assert "{" not in html.split("<style>")[0]            # sem placeholders no topo
+    assert html.count("<polygon") == 19                   # 9 + 4 + 6 etapas
+    assert html.count("<linearGradient") == 6             # 3 funis x 2 gradientes
+    assert "IntersectionObserver" in html
+    assert "O retorno em dinheiro" in html                # seção resultado (KPIs)
+    assert "closed-loop" in html                          # tabela de atribuição
+    assert "Quem converte melhor" in html                 # tabela por closer
+    assert 'class="kpi"' in html and 'class="tbl"' in html
 
 
 def test_render_sem_anim():
     dados = json.loads(EX.read_text(encoding="utf-8"))
     html = br.render(dados, animate=False)
-    assert "IntersectionObserver" not in html
-    assert "fpoly" not in html
+    assert "IntersectionObserver" not in html and "fpoly" not in html
 
 
 def _run_all():
