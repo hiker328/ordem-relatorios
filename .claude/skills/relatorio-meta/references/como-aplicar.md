@@ -5,7 +5,7 @@
 ## Passo a passo
 1. No Gerenciador de Anúncios, abra o período do relatório (ex: o mês que fechou).
 2. Exporte o relatório no nível que preferir (conta ou campanha) com as métricas que você reporta: investimento, resultados/conversões, custo por resultado, CTR, alcance, receita/ROAS. Pode ser uma tabela colada ou um print.
-3. Abra uma conversa nova no Claude (ou ChatGPT). Cole o prompt do arquivo `solucao.md`.
+3. Abra uma conversa nova no Claude (ou ChatGPT). Cole o prompt do arquivo `SKILL.md`.
 4. No fim do prompt, cole os seus dados: o cliente e a meta combinada, o período (e o período anterior, se quiser comparação) e o relatório.
 5. Envie. Você recebe o relatório executivo pronto: resumo, métricas traduzidas, destaques e alertas, insights e próximas ações.
 6. Revise, ajuste o tom à voz da agência, cole no seu modelo/PDF e mande pro cliente.
