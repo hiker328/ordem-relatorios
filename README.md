@@ -30,6 +30,35 @@ relatórios completos em [`examples/`](examples/) — abra os `.html` para a ver
 > Prints do topo (header + funil de vendas). Página inteira em
 > `examples/previews/relatorio-*.png`.
 
+### Animação
+
+![Animação do relatório](examples/previews/animacao.gif)
+
+Tudo nativo (CSS + JS vanilla, sem libs): os números fazem *count-up* e o funil
+cresce em cascata ao carregar. Respeita `prefers-reduced-motion` e tem `--no-anim`
+para PDF/impressão.
+
+### Tipos de relatório
+
+O **mesmo `dados.json`** gera formatos diferentes — escolha com `--tipo` (ou o campo
+`"tipo"` no JSON) para o relatório não sair sempre igual. Detalhes em
+[`tipos.md`](.claude/skills/gerar-relatorio-funil/references/tipos.md).
+
+| Tipo | Para quê |
+|------|----------|
+| `completo` | Diagnóstico cheio (padrão) — 3 funis + R$ + tabelas |
+| `executivo` | 1 página para o dono/decisor |
+| `midia` | Reunião com o gestor de tráfego (só marketing) |
+| `comercial` | Reunião com o time de vendas (só comercial) |
+| `performance` | Foco em ROI/retorno em R$ |
+| `semanal` | Acompanhamento rápido |
+
+```bash
+python .claude/skills/gerar-relatorio-funil/scripts/build_report.py \
+  examples/dados-exemplo.json --tipo executivo -o relatorio.html
+```
+Exemplos de cada tipo em [`examples/tipos/`](examples/tipos/).
+
 ## Por que existe
 
 Agência boa entrega resultado — mas quase nunca **mostra** isso de forma clara.

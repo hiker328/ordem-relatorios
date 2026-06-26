@@ -11,7 +11,11 @@ cada `relatorio-*.html` é a saída (abra no navegador para ver animado).
 | Clínica / saúde (Vitalis) | `dados-clinica.json` | `relatorio-clinica.html` | laranja + azul |
 
 `previews/` tem prints PNG de cada um (topo em `preview-*.png`, página inteira em
-`relatorio-*.png`).
+`relatorio-*.png`) e o GIF da animação (`animacao.gif`).
+
+`tipos/` tem um exemplo de cada **tipo de relatório** (completo, executivo, midia,
+comercial, performance, semanal) gerado do mesmo `dados-exemplo.json` — ver
+`tipos.md` na skill `gerar-relatorio-funil`.
 
 Regerar um relatório:
 ```bash

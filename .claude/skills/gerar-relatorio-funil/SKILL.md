@@ -46,6 +46,14 @@ python scripts/build_report.py dados.json -o relatorio.html
 python scripts/build_report.py dados.json -o relatorio.html --no-anim
 ```
 
+**Tipos de relatório** (mesmo `dados.json`, formatos diferentes — ver
+`references/tipos.md`): `completo` (padrão), `executivo` (1 página p/ o dono),
+`midia` (foco tráfego), `comercial` (foco vendas), `performance` (foco ROI),
+`semanal` (acompanhamento). Escolha o que casa com o objetivo/interlocutor:
+```bash
+python scripts/build_report.py dados.json --tipo executivo -o relatorio.html
+```
+
 O HTML é **auto-contido** (CSS + SVG + JS embutidos; nenhuma dependência externa,
 abre offline). Animações: funis crescem com stagger, números fazem count-up e as
 seções aparecem ao rolar — tudo respeitando `prefers-reduced-motion`.

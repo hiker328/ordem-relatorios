@@ -257,7 +257,24 @@ def render_tabela(t):
             f'<table class="tbl"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></section>')
 
 
-def render(dados, animate=True):
+# Tipos de relatório: cada um seleciona/ordena seções a partir do MESMO dados.json.
+LAYOUTS = {
+    # completo: o diagnóstico dos 3 funis (padrão)
+    "completo":    {"funis": ["vendas", "marketing", "comercial"], "resultado": True,  "tabelas": True,  "conclusao": True,  "plano": True},
+    # executivo: 1 página — funil de vendas + R$ + conclusão + plano
+    "executivo":   {"funis": ["vendas"],                            "resultado": True,  "tabelas": False, "conclusao": True,  "plano": True},
+    # midia: foco topo — só marketing, atribuição de criativo e plano de mídia
+    "midia":       {"funis": ["marketing"],                         "resultado": False, "tabelas": True,  "conclusao": True,  "plano": True, "tabela_cor": "marketing", "plano_setor": "m"},
+    # comercial: foco fundo — funil comercial, pipeline/por-closer e plano comercial
+    "comercial":   {"funis": ["comercial"],                         "resultado": False, "tabelas": True,  "conclusao": True,  "plano": True, "tabela_cor": "comercial", "plano_setor": "c"},
+    # performance: foco R$ — KPIs, funil de vendas e atribuição (sem plano)
+    "performance": {"funis": ["vendas"],                            "resultado": True,  "tabelas": True,  "conclusao": True,  "plano": False},
+    # semanal: acompanhamento enxuto — KPIs + funil de vendas + plano
+    "semanal":     {"funis": ["vendas"],                            "resultado": True,  "tabelas": False, "conclusao": False, "plano": True},
+}
+
+
+def render(dados, animate=True, tipo=None):
     m = dados.get("marca", {})
     primaria = m.get("cor_primaria", "#F4B321")
     secundaria = m.get("cor_secundaria", "#3ec8cf")
@@ -288,11 +305,17 @@ def render(dados, animate=True):
         stamps += (f'<div><div class="k">{esc(s.get("k",""))}</div><div class="v">'
                    f'{count_span(s.get("v",""), animate)}{small}</div>{delta}</div>')
 
-    funis = "".join(render_funil(f, m, animate) for f in dados.get("funis", []))
-    resultado = render_resultado(dados.get("resultado"), animate)
-    tabelas = "".join(render_tabela(t) for t in dados.get("tabelas", []))
+    tipo = (tipo or dados.get("tipo") or "completo")
+    cfg = LAYOUTS.get(tipo, LAYOUTS["completo"])
+    funis_in = [f for f in dados.get("funis", []) if f.get("id") in cfg["funis"]]
+    funis = "".join(render_funil(f, m, animate) for f in funis_in)
+    resultado = render_resultado(dados.get("resultado"), animate) if cfg["resultado"] else ""
+    tabs = dados.get("tabelas", [])
+    if cfg.get("tabela_cor"):
+        tabs = [t for t in tabs if t.get("cor") == cfg["tabela_cor"]]
+    tabelas = "".join(render_tabela(t) for t in tabs) if cfg["tabelas"] else ""
 
-    conc = dados.get("conclusao", {})
+    conc = dados.get("conclusao", {}) if cfg["conclusao"] else {}
     conc_html = ""
     if conc:
         paras = "".join(f"<p>{p}</p>" for p in conc.get("paragrafos", []))
@@ -302,15 +325,18 @@ def render(dados, animate=True):
         conc_html = (f'<div class="close"><div class="ct">'
                      f'{esc(conc.get("titulo","A conclusão"))}</div>{paras}{tags}</div>')
 
-    plano = dados.get("plano", {})
+    plano = dados.get("plano", {}) if cfg["plano"] else {}
     plano_html = ""
     if plano.get("itens"):
+        itens = plano["itens"]
+        if cfg.get("plano_setor"):
+            itens = [it for it in itens if it.get("setor") == cfg["plano_setor"]]
         rows = "".join(
             f'<div class="pl"><div class="sd {"c" if it.get("setor")=="c" else "m"}">'
             f'{"Comercial" if it.get("setor")=="c" else "Marketing"}</div>'
             f'<div class="ax"><b>{esc(it.get("acao",""))}</b>'
             f'<small>{esc(it.get("detalhe",""))}</small></div>'
-            f'<div class="pz">{esc(it.get("prazo",""))}</div></div>' for it in plano["itens"])
+            f'<div class="pz">{esc(it.get("prazo",""))}</div></div>' for it in itens)
         plano_html = (f'<section style="border-bottom:none;"><div class="eyebrow e-geral">'
                       f'<span class="pill">Plano</span> próximos passos</div><h2>'
                       f'{esc(plano.get("titulo","O que destrava cada funil"))}</h2>'
@@ -481,10 +507,13 @@ def main():
     ap.add_argument("dados", help="caminho do dados.json")
     ap.add_argument("-o", "--out", default="relatorio.html")
     ap.add_argument("--no-anim", action="store_true", help="desliga animações")
+    ap.add_argument("--tipo", default=None,
+                    choices=list(LAYOUTS.keys()),
+                    help="tipo de relatório (padrão: completo, ou o 'tipo' do dados.json)")
     args = ap.parse_args()
     with open(args.dados, encoding="utf-8") as f:
         dados = json.load(f)
-    out = render(dados, animate=not args.no_anim)
+    out = render(dados, animate=not args.no_anim, tipo=args.tipo)
     with open(args.out, "w", encoding="utf-8") as f:
         f.write(out)
     print(f"OK -> {args.out} ({len(out)} bytes)")
