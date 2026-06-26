@@ -116,9 +116,7 @@ O relatório é animado **sem nenhuma biblioteca externa** (CSS + um `<script>` 
 embutido): os funis crescem com efeito em cascata, os números fazem *count-up* e as
 seções surgem ao rolar — tudo respeitando `prefers-reduced-motion` (acessibilidade)
 e com fallback estático para impressão/PDF (`--no-anim`). Mantém o princípio de
-"um arquivo só, portátil, offline". (Skills de animação externas — ex.
-`delphi-ai/animate-skill`, `freshtechbro/claudedesignskills` — não são necessárias
-aqui; se um dia quiser efeitos mais elaborados, dá pra plugar.)
+"um arquivo só, portátil, offline" — sem depender de nenhuma biblioteca de fora.
 
 ## Por que essa arquitetura é diferente
 
