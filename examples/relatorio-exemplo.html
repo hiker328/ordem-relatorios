@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Os 3 Funis · 30 dias</title>
+<style>
+  :root{
+    --bg:#02112F; --bg2:#051831; --ink:#e9eefa; --mut:#90a0bf; --mut2:#5c6d8d;
+    --gold:#F4B321; --gold2:#ffd87a; --teal:#3ec8cf; --teal2:#7fe3e8;
+    --green:#4dd49c; --red:#f47168; --amber:#efad45;
+    --line:rgba(255,255,255,.07); --line2:rgba(255,255,255,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',-apple-system,Roboto,Helvetica,Arial,sans-serif;background:#000;color:var(--ink);font-size:14px;line-height:1.62;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{max-width:860px;margin:0 auto;background:radial-gradient(120% 60% at 80% 0%,#0a2349 0%,var(--bg) 45%,var(--bg2) 100%);}
+  header{padding:60px 60px 44px;border-bottom:1px solid var(--line);}
+  .brand{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:700;display:flex;align-items:center;gap:11px;}
+  .brand::before{content:'';width:26px;height:1px;background:var(--gold);}
+  h1{font-size:38px;font-weight:800;letter-spacing:-1.2px;line-height:1.06;margin:20px 0 16px;}
+  h1 em{font-style:normal;color:var(--gold2);}
+  .lede{font-size:15px;color:#c2cee6;max-width:600px;line-height:1.7;}
+  .lede b{color:#fff;}
+  .stamps{display:flex;gap:0;margin-top:34px;border-top:1px solid var(--line);flex-wrap:wrap;}
+  .stamps div{flex:1;padding-top:18px;border-right:1px solid var(--line);min-width:120px;}
+  .stamps div:last-child{border:none;}
+  .stamps .k{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut2);}
+  .stamps .v{font-size:24px;font-weight:300;letter-spacing:-1px;margin-top:6px;}
+  .stamps .v small{font-size:12px;color:var(--gold);letter-spacing:0;}
+  section{padding:52px 60px;border-bottom:1px solid var(--line);}
+  .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:9px;}
+  .eyebrow .pill{font-size:9px;letter-spacing:1px;padding:2px 9px;border-radius:20px;font-weight:800;}
+  .e-geral{color:var(--ink);} .e-geral .pill{background:rgba(255,255,255,.1);color:#fff;}
+  .e-mkt{color:var(--gold2);} .e-mkt .pill{background:rgba(244,179,33,.16);color:var(--gold2);}
+  .e-com{color:var(--teal2);} .e-com .pill{background:rgba(62,200,207,.16);color:var(--teal2);}
+  h2{font-size:26px;font-weight:700;letter-spacing:-.5px;margin-bottom:8px;}
+  .sub{font-size:13.5px;color:var(--mut);max-width:600px;line-height:1.65;margin-bottom:34px;}
+  .hfun{margin:6px 0 30px;} .hfun svg{width:100%;height:auto;display:block;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .card{border:1px solid var(--line);border-radius:13px;padding:20px 22px;background:rgba(255,255,255,.016);}
+  .card.span{grid-column:1 / -1;}
+  .card .lab{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:800;margin-bottom:8px;}
+  .lab.risk{color:var(--red);} .lab.force{color:var(--green);} .lab.note{color:var(--amber);}
+  .card h4{font-size:15.5px;font-weight:700;color:#fff;margin-bottom:7px;letter-spacing:-.2px;}
+  .card p{font-size:12.8px;color:#bcc8e0;line-height:1.62;}
+  .card p b{color:var(--gold2);font-weight:700;} .card p .n{color:#fff;font-weight:700;}
+  .pipe{margin-top:6px;}
+  .pi{display:flex;gap:13px;padding:13px 0;border-top:1px solid var(--line);}
+  .pi .pd{width:8px;height:8px;border-radius:50%;margin-top:7px;flex-shrink:0;}
+  .pi .pnm{font-weight:700;color:#fff;font-size:14px;}
+  .pi .pst{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;padding:2px 8px;border-radius:20px;margin-left:9px;}
+  .st-hot{background:rgba(77,212,156,.14);color:var(--green);}
+  .st-warm{background:rgba(239,173,69,.14);color:var(--amber);}
+  .st-cold{background:rgba(244,115,107,.14);color:var(--red);}
+  .pi .pdesc{font-size:12px;color:var(--mut);margin-top:3px;line-height:1.5;}
+  .close{padding:48px 60px;background:linear-gradient(160deg,rgba(244,179,33,.06),transparent 70%);border-bottom:1px solid var(--line);}
+  .close .ct{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px;}
+  .close p{font-size:15px;color:#cfdaef;line-height:1.72;} .close p+p{margin-top:13px;}
+  .close .tag{display:inline-block;min-width:104px;color:var(--gold2);font-weight:700;}
+  .close .tag.c{color:var(--teal2);}
+  .plan{border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-top:20px;}
+  .pl{display:grid;grid-template-columns:124px 1fr 96px;border-top:1px solid var(--line);align-items:center;}
+  .pl:first-child{border-top:none;} .pl>div{padding:16px 20px;}
+  .pl .sd{font-size:9.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;border-left:2px solid;padding-left:12px;}
+  .sd.m{color:var(--gold2);border-color:var(--gold);} .sd.c{color:var(--teal2);border-color:var(--teal);}
+  .pl .ax b{display:block;color:#fff;font-size:14px;line-height:1.35;} .pl .ax small{display:block;color:var(--mut);font-size:11.5px;margin-top:4px;line-height:1.4;}
+  .pl .pz{font-size:11px;color:var(--mut);text-align:right;font-weight:600;}
+  footer{padding:24px 60px 44px;font-size:10.5px;color:var(--mut2);line-height:1.7;}
+  @media print{body{background:var(--bg);font-size:11.5px;}.page{max-width:none;}section{break-inside:avoid;}.reveal{opacity:1!important;transform:none!important;}}
+  @media(max-width:680px){.grid2{grid-template-columns:1fr;}}
+  @media (prefers-reduced-motion: no-preference){
+    .fpoly{opacity:0;transform-box:fill-box;transform-origin:left center;animation:fgrow .7s cubic-bezier(.2,.8,.2,1) forwards;}
+    @keyframes fgrow{from{opacity:0;transform:scaleX(.15)}to{opacity:1;transform:scaleX(1)}}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.in{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    
+    <div class="brand">SolarOS · Captação de Integradores</div>
+    <h1>Os três funis, e onde cada um <em>vaza</em>.</h1>
+    <p class="lede">30 dias de operação lidos em três camadas: o <b>funil de vendas</b> (visão geral), o <b>funil de marketing</b> (topo) e o <b>funil comercial</b> (fundo). Cada um com sua leitura e seu próprio ponto de melhoria.</p>
+    <div class="stamps"><div><div class="k">Período</div><div class="v">28/05–24/06</div></div><div><div class="k">Investido</div><div class="v"><span class="js-count" data-raw="R$ 2.247">R$ 2.247</span></div></div><div><div class="k">Leads</div><div class="v"><span class="js-count" data-raw="226">226</span></div></div><div><div class="k">MQL</div><div class="v"><span class="js-count" data-raw="51">51</span> <small>23%</small></div></div><div><div class="k">Em rota</div><div class="v"><span class="js-count" data-raw="4">4</span> <small>+1 contrato</small></div></div></div>
+  </header>
+  <section><div class="eyebrow e-geral"><span class="pill">Funil 1</span> Visão geral</div><h2>O funil de vendas completo</h2><p class="sub">Da impressão ao contrato. A cor muda no handoff: o trecho dourado é marketing (até o MQL); o azul é comercial (do MQL em diante).</p><div class="hfun"><svg viewBox="0 0 800 210" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g_vendas_m" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F4B321"/><stop offset="1" stop-color="#ffd87a"/></linearGradient><linearGradient id="g_vendas_c" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3ec8cf"/><stop offset="1" stop-color="#7fe3e8"/></linearGradient><filter id="sh_g_vendas" x="-8%" y="-12%" width="116%" height="134%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.25"/></filter></defs><polygon points="20,40 100,88 100,102 20,150" fill="url(#g_vendas_m)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.00s"/><polygon points="104,88 185,88 185,102 104,102" fill="url(#g_vendas_m)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.12s"/><polygon points="189,88 269,88 269,102 189,102" fill="url(#g_vendas_m)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.24s"/><polygon points="273,88 354,88 354,102 273,102" fill="url(#g_vendas_m)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.36s"/><polygon points="358,88 438,88 438,102 358,102" fill="url(#g_vendas_c)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.48s"/><polygon points="442,88 523,88 523,102 442,102" fill="url(#g_vendas_c)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.60s"/><polygon points="527,88 607,88 607,102 527,102" fill="url(#g_vendas_c)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.72s"/><polygon points="611,88 692,88 692,102 611,102" fill="url(#g_vendas_c)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.84s"/><polygon points="696,88 776,89 776,101 696,102" fill="url(#g_vendas_c)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.96s"/><g font-family="Segoe UI,Arial"><text x="62" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">IMPRESSÕES</text><text x="62" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">62.039</text><text x="147" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">CLIQUES</text><text x="147" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">650</text><text x="147" y="190" fill="#90a0bf" font-size="11.5" text-anchor="middle">1,0% CTR</text><text x="231" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">LEADS</text><text x="231" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">226</text><text x="231" y="190" fill="#4dd49c" font-size="11.5" font-weight="700" text-anchor="middle">34,8% do clique</text><text x="316" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">MQL</text><text x="316" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">51</text><text x="316" y="190" fill="#f47168" font-size="11.5" font-weight="700" text-anchor="middle">22,6% do lead &#9664; vaza</text><text x="400" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">AGENDAM.</text><text x="400" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">11</text><text x="400" y="190" fill="#f47168" font-size="11.5" font-weight="700" text-anchor="middle">22% dos MQL &#9664; vaza</text><text x="484" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">R1 FEITAS</text><text x="484" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">8</text><text x="484" y="190" fill="#4dd49c" font-size="11.5" font-weight="700" text-anchor="middle">0 no-show</text><text x="569" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">QUALIF.+R2</text><text x="569" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">5</text><text x="653" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">PROPOSTAS</text><text x="653" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">3</text><text x="738" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">CONTRATO</text><text x="738" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">1</text><text x="738" y="190" fill="#90a0bf" font-size="11.5" text-anchor="middle">4 em rota</text></g></svg></div><div class="card span" style="margin-top:26px;"><div class="lab note">A leitura de uma frase</div><h4>O funil não está quebrado — está sub-aproveitado nas duas pontas.</h4><p>No topo, o marketing entregou lead barato mas <span class="n">77% fora do perfil</span>. No meio, o comercial atendeu todos os MQL mas só <span class="n">22% agendaram</span>. Depois do agendamento, tudo flui: <b>zero no-show, propostas saindo, contrato na rua</b>.</p></div></section><section><div class="eyebrow e-mkt"><span class="pill">Funil 2</span> Topo · responsabilidade da mídia</div><h2>Funil de marketing</h2><p class="sub">Da impressão ao MQL. O lead chega a custo competitivo e o formulário converte bem — mas a qualidade caiu ao longo do mês.</p><div class="hfun"><svg viewBox="0 0 800 210" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g_marketing_m" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F4B321"/><stop offset="1" stop-color="#ffd87a"/></linearGradient><linearGradient id="g_marketing_c" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3ec8cf"/><stop offset="1" stop-color="#7fe3e8"/></linearGradient><filter id="sh_g_marketing" x="-8%" y="-12%" width="116%" height="134%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.25"/></filter></defs><polygon points="20,40 206,88 206,102 20,150" fill="url(#g_marketing_m)" filter="url(#sh_g_marketing)" class="fpoly" style="animation-delay:0.00s"/><polygon points="210,88 396,88 396,102 210,102" fill="url(#g_marketing_m)" filter="url(#sh_g_marketing)" class="fpoly" style="animation-delay:0.12s"/><polygon points="400,88 586,88 586,102 400,102" fill="url(#g_marketing_m)" filter="url(#sh_g_marketing)" class="fpoly" style="animation-delay:0.24s"/><polygon points="590,88 776,89 776,101 590,102" fill="url(#g_marketing_m)" filter="url(#sh_g_marketing)" class="fpoly" style="animation-delay:0.36s"/><g font-family="Segoe UI,Arial"><text x="115" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">IMPRESSÕES</text><text x="115" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">62.039</text><text x="305" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">CLIQUES</text><text x="305" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">650</text><text x="305" y="190" fill="#90a0bf" font-size="11.5" text-anchor="middle">1,0% CTR</text><text x="495" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">LEADS</text><text x="495" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">226</text><text x="495" y="190" fill="#4dd49c" font-size="11.5" font-weight="700" text-anchor="middle">34,8% do clique</text><text x="685" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">MQL</text><text x="685" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">51</text><text x="685" y="190" fill="#f47168" font-size="11.5" font-weight="700" text-anchor="middle">22,6% &#9664; vaza</text></g></svg></div><div class="grid2"><div class="card"><div class="lab risk">Risco · crítico</div><h4>A semana em que a qualidade desabou</h4><p>A 3ª semana teve o <span class="n">maior orçamento (R$ 520)</span> e o pior retorno: o CPMQL <b>triplicou, de R$ 33 para R$ 104</b>, e o joio foi a <span class="n">81%</span>.</p></div><div class="card"><div class="lab risk">Risco</div><h4>Um criativo só, 30 dias</h4><p>O AD 04 carregou <span class="n">97% dos resultados</span> sozinho. <b>Zero criativos novos no mês</b> — frequência em 2,9x é a raiz da queda de CTR.</p></div><div class="card"><div class="lab risk">Risco</div><h4>Verba em lugar errado</h4><p>Instagram entrega CPL de <b>R$ 7,90</b>; Facebook, <b>R$ 15,85</b> — o dobro. A região Norte deu <span class="n">20 leads e 1 MQL (5%)</span> contra 32% do Centro-Oeste.</p></div><div class="card"><div class="lab force">Força · o caminho</div><h4>O filtro de faturamento funciona</h4><p>A campanha com a faixa "+R$100k/mês" dobrou a taxa de MQL — <b>40,7% contra 20,2%</b>. Em escala renderia <span class="n">~50% mais MQL no mesmo orçamento</span>.</p></div></div></section><section><div class="eyebrow e-com"><span class="pill">Funil 3</span> Fundo · responsabilidade comercial</div><h2>Funil comercial</h2><p class="sub">Do MQL ao contrato. Todos os MQL foram atendidos — o ponto de perda é o agendamento (muito follow-up por mensagem, pouca ligação).</p><div class="hfun"><svg viewBox="0 0 800 210" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g_comercial_m" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3ec8cf"/><stop offset="1" stop-color="#7fe3e8"/></linearGradient><linearGradient id="g_comercial_c" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3ec8cf"/><stop offset="1" stop-color="#7fe3e8"/></linearGradient><filter id="sh_g_comercial" x="-8%" y="-12%" width="116%" height="134%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.25"/></filter></defs><polygon points="20,40 143,83 143,107 20,150" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.00s"/><polygon points="147,83 269,86 269,104 147,107" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.12s"/><polygon points="273,86 396,88 396,102 273,104" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.24s"/><polygon points="400,88 523,88 523,102 400,102" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.36s"/><polygon points="527,88 649,88 649,102 527,102" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.48s"/><polygon points="653,88 776,89 776,101 653,102" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.60s"/><g font-family="Segoe UI,Arial"><text x="83" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">MQL</text><text x="83" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">51</text><text x="210" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">AGENDARAM</text><text x="210" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">11</text><text x="210" y="190" fill="#f47168" font-size="11.5" font-weight="700" text-anchor="middle">22% &#9664; vaza</text><text x="337" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">R1 FEITAS</text><text x="337" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">8</text><text x="337" y="190" fill="#4dd49c" font-size="11.5" font-weight="700" text-anchor="middle">0 no-show</text><text x="463" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">QUALIF.</text><text x="463" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">5</text><text x="590" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">PROPOSTA</text><text x="590" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">3</text><text x="717" y="25" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">CONTRATO</text><text x="717" y="103" fill="#0c1322" font-size="23" font-weight="800" text-anchor="middle">1</text><text x="717" y="190" fill="#90a0bf" font-size="11.5" text-anchor="middle">+4 em rota</text></g></svg></div><div class="grid2"><div class="card"><div class="lab risk">Risco · o ponto fraco</div><h4>Taxa de agendamento de 22%</h4><p>Todos os 51 MQL foram contatados, mas só <span class="n">11 agendaram</span>. Referência de pré-venda estruturada: <b>30 a 50%</b>. A diferença é o canal — foi quase tudo por mensagem, <b>com pouca ligação ativa</b>.</p></div><div class="card"><div class="lab force">Força · o motor responde</div><h4>Depois da sala, tudo flui</h4><p><span class="n">Zero no-show</span> em 8 R1. Um único disparo de follow-up recente <b>reacendeu e reagendou 4 reuniões</b> — o problema é volume de toque, não condução.</p></div><div class="card"><div class="lab note">Ajuste de processo</div><h4>3 das 8 R1 foram fora do perfil</h4><p>Três reuniões com leads que não deviam ter avançado — <b>falha de filtro no agendamento</b>. Correção barata: checklist de qualificação antes de marcar.</p></div><div class="card"><div class="lab force">Força · já em correção</div><h4>Pré-venda sendo estruturada</h4><p>Processo de SDR definido, com <b>janela fixa de ligação/follow-up</b>. Com ~40 MQL já pagos, é o ajuste de <b>retorno mais rápido</b> do funil.</p></div></div><div class="card span" style="margin-top:14px;"><div class="lab" style="color:var(--teal2)">Pipeline ativo · 4 negócios</div><div class="pipe"><div class="pi"><div class="pd" style="background:var(--green)"></div><div><span class="pnm">Witer</span><span class="pst st-hot">contrato na rua</span><div class="pdesc">No ponto de fechar, contrato em mãos. Pausado por imprevisto pessoal — retomada prevista p/ fim do mês.</div></div></div><div class="pi"><div class="pd" style="background:var(--amber)"></div><div><span class="pnm">Rigel · Adilson</span><span class="pst st-warm">decisão em comitê</span><div class="pdesc">Sócio muito interessado; os outros acham caro / querem testar Google. Reunião dos sócios no sábado.</div></div></div><div class="pi"><div class="pd" style="background:var(--red)"></div><div><span class="pnm">Clóvis</span><span class="pst st-cold">proposta · incerto</span><div class="pdesc">Gostou da solução, mas achou caro (vem de prejuízos com agências anteriores). Aguardando retorno.</div></div></div><div class="pi"><div class="pd" style="background:var(--green)"></div><div><span class="pnm">LC</span><span class="pst st-hot">R2 com sócio</span><div class="pdesc">R1 com a secretária, que amou e repassou internamente. R2 com o sócio agendada — sinal forte de fit.</div></div></div></div></div></section>
+  <div class="close"><div class="ct">A conclusão</div><p>Os três funis contam a mesma história por ângulos diferentes: <b style="color:#fff">a base existe e funciona</b> — lead barato, formulário eficiente, reunião sem no-show, contrato na rua. O que falta é refinar as duas passagens onde o funil aperta.</p><p><span class="tag ">Marketing:</span> trazer lead mais qualificado — filtro de faturamento em escala, lookalike dos 51 MQL, cortar Norte e Facebook, criativo novo.</p><p><span class="tag c">Comercial:</span> elevar a taxa de agendamento com <b>ligação ativa</b> e horário dedicado a follow-up — os MQL já estão pagos.</p></div>
+  <section style="border-bottom:none;"><div class="eyebrow e-geral"><span class="pill">Plano</span> próximos passos</div><h2>O que destrava cada funil</h2><div class="plan"><div class="pl"><div class="sd c">Comercial</div><div class="ax"><b>Bloco diário de ligação para os MQL que ainda não agendaram</b><small>sobe a taxa de agendamento — lead já pago</small></div><div class="pz">Imediato</div></div><div class="pl"><div class="sd c">Comercial</div><div class="ax"><b>Fechar os 4 deals em rota + checklist de qualificação no agendamento</b><small>1-3 vendas = 1ª vitória do funil</small></div><div class="pz">Este mês</div></div><div class="pl"><div class="sd m">Marketing</div><div class="ax"><b>Rotação de criativo (2-3/semana)</b><small>reverte a fadiga e o colapso da Sem 3</small></div><div class="pz">Esta semana</div></div><div class="pl"><div class="sd m">Marketing</div><div class="ax"><b>Lookalike dos 51 MQL + excluir Norte + concentrar Instagram</b><small>~+50% MQL no mesmo orçamento</small></div><div class="pz">2-3 dias</div></div><div class="pl"><div class="sd m">Marketing</div><div class="ax"><b>Cadastros por Conversão: devolver o sinal de MQL ao algoritmo</b><small>Meta passa a buscar perfil, não só volume</small></div><div class="pz">3-5 dias</div></div></div></section>
+  <footer>Relatório gerado por A Ordem · Mídia: Meta Graph API v19.0 com breakdowns de posicionamento, demografia e geografia · Comercial: operação interna / CRM · Dados fictícios de exemplo.</footer>
+</div>
+
+<script>
+(function(){
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // count-up
+  function count(el){
+    var raw = el.getAttribute('data-raw')||el.textContent;
+    var m = raw.match(/[\d.]+/); if(!m){return;}
+    var target = parseInt(m[0].replace(/[^\d]/g,''),10); if(!target){return;}
+    var pre = raw.slice(0,m.index), suf = raw.slice(m.index+m[0].length);
+    var steps=38, i=0;
+    var t=setInterval(function(){
+      i++; var cur=Math.min(target, Math.round(target*i/steps));
+      el.textContent = pre + cur.toLocaleString('pt-BR') + suf;
+      if(i>=steps){el.textContent = pre + target.toLocaleString('pt-BR') + suf; clearInterval(t);}
+    }, 22);
+  }
+  // scroll reveal
+  var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.js-count').forEach(count);
+      io.unobserve(e.target);
+    }});
+  },{threshold:.18}) : null;
+  document.addEventListener('DOMContentLoaded', function(){
+    if(rm || !io){ document.querySelectorAll('.js-count').forEach(count);
+      document.querySelectorAll('.reveal').forEach(function(x){x.classList.add('in');}); return; }
+    document.querySelectorAll('section,.close,header').forEach(function(s){
+      s.classList.add('reveal'); io.observe(s);
+    });
+    // header conta logo de cara
+    document.querySelectorAll('header .js-count').forEach(count);
+  });
+})();
+</script>
+</body>
+</html>

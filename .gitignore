@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Segredos — NUNCA comitar
+.env
+*.key
+*token*
+
+# Dados/saídas gerados (coletas e relatórios fora de examples/)
+meta*.json
+deals*.csv
+*.csv
+relatorio*.html
+dados.json
+
+# Mídia
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# SO / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Exceções: exemplos e templates SÃO versionados
+!examples/
+!examples/**
+!templates/
+!templates/**

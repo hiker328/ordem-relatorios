@@ -1,0 +1,115 @@
+{
+  "marca": {
+    "nome": "SolarOS",
+    "logo": null,
+    "cor_primaria": "#F4B321",
+    "cor_secundaria": "#3ec8cf",
+    "cor_fundo": "#02112F"
+  },
+  "cabecalho": {
+    "titulo_aba": "Os 3 Funis · 30 dias",
+    "brand_line": "SolarOS · Captação de Integradores",
+    "titulo": "Os três funis, e onde cada um vaza.",
+    "titulo_em": "vaza",
+    "lede": "30 dias de operação lidos em três camadas: o <b>funil de vendas</b> (visão geral), o <b>funil de marketing</b> (topo) e o <b>funil comercial</b> (fundo). Cada um com sua leitura e seu próprio ponto de melhoria.",
+    "stamps": [
+      {"k": "Período", "v": "28/05–24/06"},
+      {"k": "Investido", "v": "R$ 2.247"},
+      {"k": "Leads", "v": "226"},
+      {"k": "MQL", "v": "51", "small": "23%"},
+      {"k": "Em rota", "v": "4", "small": "+1 contrato"}
+    ]
+  },
+  "funis": [
+    {
+      "id": "vendas",
+      "pill": "Funil 1",
+      "eyebrow": "Visão geral",
+      "titulo": "O funil de vendas completo",
+      "sub": "Da impressão ao contrato. A cor muda no handoff: o trecho dourado é marketing (até o MQL); o azul é comercial (do MQL em diante).",
+      "etapas": [
+        {"nome": "Impressões", "valor": "62.039", "fase": "mkt"},
+        {"nome": "Cliques", "valor": "650", "nota": "1,0% CTR", "fase": "mkt"},
+        {"nome": "Leads", "valor": "226", "nota": "34,8% do clique", "tipo": "win", "fase": "mkt"},
+        {"nome": "MQL", "valor": "51", "nota": "22,6% do lead", "tipo": "leak", "fase": "mkt"},
+        {"nome": "Agendam.", "valor": "11", "nota": "22% dos MQL", "tipo": "leak", "fase": "com"},
+        {"nome": "R1 feitas", "valor": "8", "nota": "0 no-show", "tipo": "win", "fase": "com"},
+        {"nome": "Qualif.+R2", "valor": "5", "fase": "com"},
+        {"nome": "Propostas", "valor": "3", "fase": "com"},
+        {"nome": "Contrato", "valor": "1", "nota": "4 em rota", "fase": "com"}
+      ],
+      "frase": {
+        "rotulo": "A leitura de uma frase",
+        "titulo": "O funil não está quebrado — está sub-aproveitado nas duas pontas.",
+        "texto": "No topo, o marketing entregou lead barato mas <span class=\"n\">77% fora do perfil</span>. No meio, o comercial atendeu todos os MQL mas só <span class=\"n\">22% agendaram</span>. Depois do agendamento, tudo flui: <b>zero no-show, propostas saindo, contrato na rua</b>."
+      }
+    },
+    {
+      "id": "marketing",
+      "pill": "Funil 2",
+      "eyebrow": "Topo · responsabilidade da mídia",
+      "titulo": "Funil de marketing",
+      "sub": "Da impressão ao MQL. O lead chega a custo competitivo e o formulário converte bem — mas a qualidade caiu ao longo do mês.",
+      "etapas": [
+        {"nome": "Impressões", "valor": "62.039"},
+        {"nome": "Cliques", "valor": "650", "nota": "1,0% CTR"},
+        {"nome": "Leads", "valor": "226", "nota": "34,8% do clique", "tipo": "win"},
+        {"nome": "MQL", "valor": "51", "nota": "22,6%", "tipo": "leak"}
+      ],
+      "cards": [
+        {"tipo": "risk", "label": "Risco · crítico", "titulo": "A semana em que a qualidade desabou", "texto": "A 3ª semana teve o <span class=\"n\">maior orçamento (R$ 520)</span> e o pior retorno: o CPMQL <b>triplicou, de R$ 33 para R$ 104</b>, e o joio foi a <span class=\"n\">81%</span>."},
+        {"tipo": "risk", "label": "Risco", "titulo": "Um criativo só, 30 dias", "texto": "O AD 04 carregou <span class=\"n\">97% dos resultados</span> sozinho. <b>Zero criativos novos no mês</b> — frequência em 2,9x é a raiz da queda de CTR."},
+        {"tipo": "risk", "label": "Risco", "titulo": "Verba em lugar errado", "texto": "Instagram entrega CPL de <b>R$ 7,90</b>; Facebook, <b>R$ 15,85</b> — o dobro. A região Norte deu <span class=\"n\">20 leads e 1 MQL (5%)</span> contra 32% do Centro-Oeste."},
+        {"tipo": "force", "label": "Força · o caminho", "titulo": "O filtro de faturamento funciona", "texto": "A campanha com a faixa \"+R$100k/mês\" dobrou a taxa de MQL — <b>40,7% contra 20,2%</b>. Em escala renderia <span class=\"n\">~50% mais MQL no mesmo orçamento</span>."}
+      ]
+    },
+    {
+      "id": "comercial",
+      "pill": "Funil 3",
+      "eyebrow": "Fundo · responsabilidade comercial",
+      "titulo": "Funil comercial",
+      "sub": "Do MQL ao contrato. Todos os MQL foram atendidos — o ponto de perda é o agendamento (muito follow-up por mensagem, pouca ligação).",
+      "etapas": [
+        {"nome": "MQL", "valor": "51"},
+        {"nome": "Agendaram", "valor": "11", "nota": "22%", "tipo": "leak"},
+        {"nome": "R1 feitas", "valor": "8", "nota": "0 no-show", "tipo": "win"},
+        {"nome": "Qualif.", "valor": "5"},
+        {"nome": "Proposta", "valor": "3"},
+        {"nome": "Contrato", "valor": "1", "nota": "+4 em rota"}
+      ],
+      "cards": [
+        {"tipo": "risk", "label": "Risco · o ponto fraco", "titulo": "Taxa de agendamento de 22%", "texto": "Todos os 51 MQL foram contatados, mas só <span class=\"n\">11 agendaram</span>. Referência de pré-venda estruturada: <b>30 a 50%</b>. A diferença é o canal — foi quase tudo por mensagem, <b>com pouca ligação ativa</b>."},
+        {"tipo": "force", "label": "Força · o motor responde", "titulo": "Depois da sala, tudo flui", "texto": "<span class=\"n\">Zero no-show</span> em 8 R1. Um único disparo de follow-up recente <b>reacendeu e reagendou 4 reuniões</b> — o problema é volume de toque, não condução."},
+        {"tipo": "note", "label": "Ajuste de processo", "titulo": "3 das 8 R1 foram fora do perfil", "texto": "Três reuniões com leads que não deviam ter avançado — <b>falha de filtro no agendamento</b>. Correção barata: checklist de qualificação antes de marcar."},
+        {"tipo": "force", "label": "Força · já em correção", "titulo": "Pré-venda sendo estruturada", "texto": "Processo de SDR definido, com <b>janela fixa de ligação/follow-up</b>. Com ~40 MQL já pagos, é o ajuste de <b>retorno mais rápido</b> do funil."}
+      ],
+      "pipeline": [
+        {"nome": "Witer", "status": "hot", "status_label": "contrato na rua", "desc": "No ponto de fechar, contrato em mãos. Pausado por imprevisto pessoal — retomada prevista p/ fim do mês."},
+        {"nome": "Rigel · Adilson", "status": "warm", "status_label": "decisão em comitê", "desc": "Sócio muito interessado; os outros acham caro / querem testar Google. Reunião dos sócios no sábado."},
+        {"nome": "Clóvis", "status": "cold", "status_label": "proposta · incerto", "desc": "Gostou da solução, mas achou caro (vem de prejuízos com agências anteriores). Aguardando retorno."},
+        {"nome": "LC", "status": "hot", "status_label": "R2 com sócio", "desc": "R1 com a secretária, que amou e repassou internamente. R2 com o sócio agendada — sinal forte de fit."}
+      ]
+    }
+  ],
+  "conclusao": {
+    "titulo": "A conclusão",
+    "paragrafos": [
+      "Os três funis contam a mesma história por ângulos diferentes: <b style=\"color:#fff\">a base existe e funciona</b> — lead barato, formulário eficiente, reunião sem no-show, contrato na rua. O que falta é refinar as duas passagens onde o funil aperta."
+    ],
+    "tags": [
+      {"label": "Marketing", "cor": "m", "texto": "trazer lead mais qualificado — filtro de faturamento em escala, lookalike dos 51 MQL, cortar Norte e Facebook, criativo novo."},
+      {"label": "Comercial", "cor": "c", "texto": "elevar a taxa de agendamento com <b>ligação ativa</b> e horário dedicado a follow-up — os MQL já estão pagos."}
+    ]
+  },
+  "plano": {
+    "titulo": "O que destrava cada funil",
+    "itens": [
+      {"setor": "c", "acao": "Bloco diário de ligação para os MQL que ainda não agendaram", "detalhe": "sobe a taxa de agendamento — lead já pago", "prazo": "Imediato"},
+      {"setor": "c", "acao": "Fechar os 4 deals em rota + checklist de qualificação no agendamento", "detalhe": "1-3 vendas = 1ª vitória do funil", "prazo": "Este mês"},
+      {"setor": "m", "acao": "Rotação de criativo (2-3/semana)", "detalhe": "reverte a fadiga e o colapso da Sem 3", "prazo": "Esta semana"},
+      {"setor": "m", "acao": "Lookalike dos 51 MQL + excluir Norte + concentrar Instagram", "detalhe": "~+50% MQL no mesmo orçamento", "prazo": "2-3 dias"},
+      {"setor": "m", "acao": "Cadastros por Conversão: devolver o sinal de MQL ao algoritmo", "detalhe": "Meta passa a buscar perfil, não só volume", "prazo": "3-5 dias"}
+    ]
+  },
+  "rodape": "Relatório gerado por A Ordem · Mídia: Meta Graph API v19.0 com breakdowns de posicionamento, demografia e geografia · Comercial: operação interna / CRM · Dados fictícios de exemplo."
+}

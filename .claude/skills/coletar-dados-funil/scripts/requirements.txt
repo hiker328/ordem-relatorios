@@ -1,0 +1,2 @@
+# Para meta_fetch.py (Graph API). crm_csv.py usa só a biblioteca padrão.
+requests>=2.31
