@@ -15,7 +15,8 @@ abre offline). Você pede em linguagem natural ("monta o relatório de funil do
 cliente X") e o agente coleta os números (Meta/Business Manager + CRM, ou manual),
 faz a leitura do funil e renderiza o relatório com a identidade visual da marca.
 
-São **2 skills** num fluxo: **coletar dados → gerar relatório.**
+São **3 skills**: **coletar dados → gerar relatório** (+ `relatorio-meta`, versão
+paste-based rápida só de mídia).
 
 ## Preview
 
@@ -84,6 +85,11 @@ usuário a obter cada credencial (`references/credenciais.md`).
 Monta o `dados.json` (números + análise), aplica a **marca** (logo + cores,
 opcional) e renderiza o HTML com `build_report.py`: funis em SVG **animados**,
 count-up de números, cards de risco/força, pipeline de deals e plano de ação.
+
+### `relatorio-meta`
+Versão **paste-based** (cola no Claude/ChatGPT, zero credencial): a agência cola as
+métricas do Meta e recebe um **relatório executivo** de mídia em texto. Alternativa
+rápida ao relatório visual completo, para quando não vai montar o `dados.json`.
 
 ## Início rápido
 
@@ -159,5 +165,5 @@ ordem-relatorios/
 
 ## Feito pela A Ordem
 
-Criado e mantido pela **A Ordem**. Estrutura e documentação inspiradas no
-`growth-os-skills` (Accelera 360). Licença MIT (ver `LICENSE`).
+Criado e mantido pela **A Ordem**. Skills feitas para agências de marketing/tráfego.
+Licença MIT (ver `LICENSE`).
