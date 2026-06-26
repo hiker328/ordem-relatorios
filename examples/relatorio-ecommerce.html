@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funil Pulse · Moda Lumière · 30 dias</title>
+<style>
+  :root{
+    --bg:#160B2E; --bg2:#051831; --ink:#e9eefa; --mut:#90a0bf; --mut2:#5c6d8d;
+    --gold:#A855F7; --gold2:#D8B4FE; --teal:#34D399; --teal2:#A7F3D0;
+    --green:#4dd49c; --red:#f47168; --amber:#efad45;
+    --line:rgba(255,255,255,.07); --line2:rgba(255,255,255,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',-apple-system,Roboto,Helvetica,Arial,sans-serif;background:#000;color:var(--ink);font-size:14px;line-height:1.62;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{max-width:860px;margin:0 auto;background:radial-gradient(120% 60% at 80% 0%,#0a2349 0%,var(--bg) 45%,var(--bg2) 100%);}
+  header{padding:60px 60px 44px;border-bottom:1px solid var(--line);}
+  .brand{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:700;display:flex;align-items:center;gap:11px;}
+  .brand::before{content:'';width:26px;height:1px;background:var(--gold);}
+  h1{font-size:38px;font-weight:800;letter-spacing:-1.2px;line-height:1.06;margin:20px 0 16px;}
+  h1 em{font-style:normal;color:var(--gold2);}
+  .lede{font-size:15px;color:#c2cee6;max-width:600px;line-height:1.7;}
+  .lede b{color:#fff;}
+  .stamps{display:flex;gap:0;margin-top:34px;border-top:1px solid var(--line);flex-wrap:wrap;}
+  .stamps>div{flex:1;padding-top:18px;border-right:1px solid var(--line);min-width:120px;}
+  .stamps>div:last-child{border:none;}
+  .stamps .k{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut2);}
+  .stamps .v{font-size:24px;font-weight:300;letter-spacing:-1px;margin-top:6px;}
+  .stamps .v small{font-size:12px;color:var(--gold);letter-spacing:0;}
+  .stamps .sdelta{font-size:11px;font-weight:700;margin-top:4px;color:var(--mut);}
+  .sdelta.up{color:var(--green);} .sdelta.down{color:var(--red);}
+  section{padding:52px 60px;border-bottom:1px solid var(--line);}
+  .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:9px;}
+  .eyebrow .pill{font-size:9px;letter-spacing:1px;padding:2px 9px;border-radius:20px;font-weight:800;}
+  .e-geral{color:var(--ink);} .e-geral .pill{background:rgba(255,255,255,.1);color:#fff;}
+  .e-mkt{color:var(--gold2);} .e-mkt .pill{background:rgba(244,179,33,.16);color:var(--gold2);}
+  .e-com{color:var(--teal2);} .e-com .pill{background:rgba(62,200,207,.16);color:var(--teal2);}
+  h2{font-size:26px;font-weight:700;letter-spacing:-.5px;margin-bottom:8px;}
+  .sub{font-size:13.5px;color:var(--mut);max-width:600px;line-height:1.65;margin-bottom:34px;}
+  .hfun{margin:6px 0 30px;} .hfun svg{width:100%;height:auto;display:block;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .card{border:1px solid var(--line);border-radius:13px;padding:20px 22px;background:rgba(255,255,255,.016);}
+  .card.span{grid-column:1 / -1;}
+  .card .lab{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:800;margin-bottom:8px;}
+  .lab.risk{color:var(--red);} .lab.force{color:var(--green);} .lab.note{color:var(--amber);}
+  .card h4{font-size:15.5px;font-weight:700;color:#fff;margin-bottom:7px;letter-spacing:-.2px;}
+  .card p{font-size:12.8px;color:#bcc8e0;line-height:1.62;}
+  .card p b{color:var(--gold2);font-weight:700;} .card p .n{color:#fff;font-weight:700;}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .kpi{border:1px solid var(--line);border-radius:13px;padding:18px;background:rgba(255,255,255,.016);}
+  .kpi .kl{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--mut2);font-weight:800;}
+  .kpi .kv{font-size:29px;font-weight:300;letter-spacing:-1.5px;margin:7px 0 4px;color:#fff;}
+  .kpi .kd{font-size:11.5px;font-weight:700;color:var(--mut);}
+  .kpi .kd.up{color:var(--green);} .kpi .kd.down{color:var(--red);}
+  .kpi .km{font-size:10.5px;color:var(--mut);margin-top:3px;}
+  .tbl{width:100%;border-collapse:collapse;font-size:12.5px;}
+  .tbl th{text-align:left;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--mut2);font-weight:800;padding:10px 12px;border-bottom:1px solid var(--line2);}
+  .tbl td{padding:11px 12px;border-bottom:1px solid var(--line);color:#cdd8ee;}
+  .tbl td:first-child{color:#fff;font-weight:600;}
+  .tbl tr:last-child td{border-bottom:none;}
+  .pipe{margin-top:6px;}
+  .pi{display:flex;gap:13px;padding:13px 0;border-top:1px solid var(--line);}
+  .pi .pd{width:8px;height:8px;border-radius:50%;margin-top:7px;flex-shrink:0;}
+  .pi .pnm{font-weight:700;color:#fff;font-size:14px;}
+  .pi .pst{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;padding:2px 8px;border-radius:20px;margin-left:9px;}
+  .st-hot{background:rgba(77,212,156,.14);color:var(--green);}
+  .st-warm{background:rgba(239,173,69,.14);color:var(--amber);}
+  .st-cold{background:rgba(244,115,107,.14);color:var(--red);}
+  .pi .pdesc{font-size:12px;color:var(--mut);margin-top:3px;line-height:1.5;}
+  .close{padding:48px 60px;background:linear-gradient(160deg,rgba(244,179,33,.06),transparent 70%);border-bottom:1px solid var(--line);}
+  .close .ct{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px;}
+  .close p{font-size:15px;color:#cfdaef;line-height:1.72;} .close p+p{margin-top:13px;}
+  .close .tag{display:inline-block;min-width:104px;color:var(--gold2);font-weight:700;}
+  .close .tag.c{color:var(--teal2);}
+  .plan{border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-top:20px;}
+  .pl{display:grid;grid-template-columns:124px 1fr 96px;border-top:1px solid var(--line);align-items:center;}
+  .pl:first-child{border-top:none;} .pl>div{padding:16px 20px;}
+  .pl .sd{font-size:9.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;border-left:2px solid;padding-left:12px;}
+  .sd.m{color:var(--gold2);border-color:var(--gold);} .sd.c{color:var(--teal2);border-color:var(--teal);}
+  .pl .ax b{display:block;color:#fff;font-size:14px;line-height:1.35;} .pl .ax small{display:block;color:var(--mut);font-size:11.5px;margin-top:4px;line-height:1.4;}
+  .pl .pz{font-size:11px;color:var(--mut);text-align:right;font-weight:600;}
+  footer{padding:24px 60px 44px;font-size:10.5px;color:var(--mut2);line-height:1.7;}
+  @media print{body{background:var(--bg);font-size:11.5px;}.page{max-width:none;}section{break-inside:avoid;}.reveal{opacity:1!important;transform:none!important;}}
+  @media(max-width:680px){.grid2,.kpis{grid-template-columns:1fr 1fr;}}
+  @media (prefers-reduced-motion: no-preference){
+    .fpoly{opacity:0;transform-box:fill-box;transform-origin:center;animation:fgrow .7s cubic-bezier(.2,.8,.2,1) forwards;}
+    @keyframes fgrow{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:scale(1)}}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.in{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    
+    <div class="brand">Agência Pulse · E-commerce Lumière</div>
+    <h1>Tráfego cheio, carrinho <em>vazando</em>.</h1>
+    <p class="lede">30 dias da loja Lumière: o <b>tráfego</b> escala bem e barato, mas a conversão <b>do clique à compra</b> trava no checkout. O dinheiro está no meio do funil.</p>
+    <div class="stamps"><div><div class="k">Período</div><div class="v">01/06–30/06</div></div><div><div class="k">Investido</div><div class="v"><span class="js-count" data-raw="R$ 18.400">R$ 18.400</span></div><div class="sdelta down">&#9660; +22% vs mês ant.</div></div><div><div class="k">Sessões</div><div class="v"><span class="js-count" data-raw="84.200">84.200</span></div><div class="sdelta up">&#9650; +31%</div></div><div><div class="k">Pedidos</div><div class="v"><span class="js-count" data-raw="612">612</span> <small>0,7%</small></div><div class="sdelta up">&#9650; +9%</div></div><div><div class="k">ROAS</div><div class="v"><span class="js-count" data-raw="3,1x">3,1x</span> <small>meta 3,5x</small></div></div></div>
+  </header>
+  <section><div class="eyebrow e-geral"><span class="pill">Funil 1</span> Visão geral</div><h2>Do anúncio ao pedido pago</h2><p class="sub">A cor muda no handoff: dourado/roxo é mídia (até o carrinho); verde é a loja (do checkout ao pedido pago). Os vazamentos estão marcados.</p><div class="hfun"><svg viewBox="0 0 820 391" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g_vendas_m" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#C4B5FD"/></linearGradient><linearGradient id="g_vendas_c" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#6EE7B7"/></linearGradient><filter id="sh_g_vendas" x="-8%" y="-14%" width="116%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.30"/></filter></defs><polygon points="153,22 623,22 591,62 185,62" fill="url(#g_vendas_m)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.00s"/><polygon points="185,69 591,69 559,109 217,109" fill="url(#g_vendas_m)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.10s"/><polygon points="217,116 559,116 526,156 250,156" fill="url(#g_vendas_m)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.20s"/><polygon points="250,163 526,163 494,203 282,203" fill="url(#g_vendas_m)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.30s"/><polygon points="282,244 494,244 462,284 314,284" fill="url(#g_vendas_c)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.40s"/><polygon points="314,291 462,291 430,331 346,331" fill="url(#g_vendas_c)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.50s"/><polygon points="346,338 430,338 430,378 346,378" fill="url(#g_vendas_c)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.60s"/><line x1="60" y1="224" x2="760" y2="224" stroke="rgba(255,255,255,.14)" stroke-dasharray="2 5"/><text x="388" y="218" text-anchor="middle" fill="#7184a6" font-size="10" letter-spacing="2">HANDOFF &#183; MARKETING &#8594; COMERCIAL</text><g font-family="Segoe UI,Arial"><text x="135" y="46" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Impressões</text><text x="645" y="42" fill="#fff" font-size="21" font-weight="700" text-anchor="start">1.240.000</text><text x="135" y="93" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Cliques</text><text x="645" y="89" fill="#fff" font-size="21" font-weight="700" text-anchor="start">26.800</text><text x="645" y="106" fill="#90a0bf" font-size="11.5" text-anchor="start">2,2% CTR</text><text x="135" y="140" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Sessões</text><text x="645" y="136" fill="#fff" font-size="21" font-weight="700" text-anchor="start">84.200</text><text x="645" y="153" fill="#4dd49c" font-size="11.5" text-anchor="start">tráfego total</text><text x="135" y="187" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Add to cart</text><text x="645" y="183" fill="#fff" font-size="21" font-weight="700" text-anchor="start">5.900</text><text x="645" y="200" fill="#f47168" font-size="11.5" text-anchor="start">7% das sessões &#9664; vaza</text><text x="135" y="268" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Checkout</text><text x="645" y="264" fill="#fff" font-size="21" font-weight="700" text-anchor="start">1.480</text><text x="645" y="281" fill="#f47168" font-size="11.5" text-anchor="start">25% do carrinho &#9664; vaza</text><text x="135" y="315" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Pagamento</text><text x="645" y="311" fill="#fff" font-size="21" font-weight="700" text-anchor="start">740</text><text x="645" y="328" fill="#90a0bf" font-size="11.5" text-anchor="start">50% do checkout</text><text x="135" y="362" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Pedido pago</text><text x="645" y="358" fill="#fff" font-size="21" font-weight="700" text-anchor="start">612</text><text x="645" y="375" fill="#4dd49c" font-size="11.5" text-anchor="start">83% aprovados</text></g></svg></div><div class="card span" style="margin-top:26px;"><div class="lab note">A leitura de uma frase</div><h4>O tráfego faz o trabalho; o checkout desfaz.</h4><p>A mídia entrega sessão barata e em volume crescente. Mas <span class="n">só 7% adicionam ao carrinho</span> e <span class="n">75% abandonam no checkout</span>. Aprovação de pagamento está saudável (83%). O ganho está no meio: página de produto e checkout.</p></div></section><section><div class="eyebrow e-mkt"><span class="pill">Funil 2</span> Topo · mídia</div><h2>Aquisição de tráfego</h2><p class="sub">Tráfego escala com CTR alto e custo por sessão baixo. O criativo de vídeo puxa o resultado; estático está saturando.</p><div class="hfun"><svg viewBox="0 0 800 216" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g_marketing_m" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#C4B5FD"/></linearGradient><linearGradient id="g_marketing_c" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#6EE7B7"/></linearGradient><filter id="sh_g_marketing" x="-8%" y="-14%" width="116%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.30"/></filter></defs><polygon points="20,37 205,45 205,179 20,187" fill="url(#g_marketing_m)" filter="url(#sh_g_marketing)" class="fpoly" style="animation-delay:0.00s"/><polygon points="210,45 395,53 395,171 210,179" fill="url(#g_marketing_m)" filter="url(#sh_g_marketing)" class="fpoly" style="animation-delay:0.10s"/><polygon points="400,53 585,61 585,163 400,171" fill="url(#g_marketing_m)" filter="url(#sh_g_marketing)" class="fpoly" style="animation-delay:0.20s"/><polygon points="590,61 775,61 775,163 590,163" fill="url(#g_marketing_m)" filter="url(#sh_g_marketing)" class="fpoly" style="animation-delay:0.30s"/><g font-family="Segoe UI,Arial"><text x="115" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">IMPRESSÕES</text><text x="115" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">1.240.000</text><text x="305" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">CLIQUES</text><text x="305" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">26.800</text><text x="305" y="206" fill="#90a0bf" font-size="11.5" text-anchor="middle">2,2% CTR</text><text x="495" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">SESSÕES</text><text x="495" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">84.200</text><text x="495" y="206" fill="#4dd49c" font-size="11.5" font-weight="700" text-anchor="middle">custo/sessão R$ 0,22</text><text x="685" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">ADD TO CART</text><text x="685" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">5.900</text><text x="685" y="206" fill="#f47168" font-size="11.5" font-weight="700" text-anchor="middle">7% &#9664; vaza</text></g></svg></div><div class="grid2"><div class="card"><div class="lab force">Força</div><h4>Vídeo carrega a conta</h4><p>Os 3 criativos de vídeo respondem por <b>71% das sessões</b> com CPC 40% menor que o estático. <span class="n">Espaço claro para escalar verba no vídeo</span>.</p></div><div class="card"><div class="lab risk">Risco</div><h4>Estático saturando</h4><p>Frequência <b>4,1x</b> nos estáticos e CTR caindo na 4ª semana. Sem rotação, o CPM sobe.</p></div><div class="card"><div class="lab risk">Risco · crítico</div><h4>Carrinho a 7%</h4><p>A taxa de add-to-cart (<span class="n">7%</span>) está abaixo da referência de moda (10–12%). A página de produto não converte o clique pago.</p></div><div class="card"><div class="lab note">Oportunidade</div><h4>Públicos quentes ociosos</h4><p>Remarketing de quem viu produto mas não comprou está com <b>verba mínima</b>. É o público mais barato de converter.</p></div></div></section><section><div class="eyebrow e-com"><span class="pill">Funil 3</span> Fundo · loja/checkout</div><h2>Conversão na loja</h2><p class="sub">Do carrinho ao pedido pago. O abandono de checkout é o maior ralo; a aprovação de pagamento, por outro lado, está ótima.</p><div class="hfun"><svg viewBox="0 0 800 216" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g_comercial_m" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#6EE7B7"/></linearGradient><linearGradient id="g_comercial_c" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#6EE7B7"/></linearGradient><filter id="sh_g_comercial" x="-8%" y="-14%" width="116%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.30"/></filter></defs><polygon points="20,37 205,45 205,179 20,187" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.00s"/><polygon points="210,45 395,53 395,171 210,179" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.10s"/><polygon points="400,53 585,61 585,163 400,171" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.20s"/><polygon points="590,61 775,61 775,163 590,163" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.30s"/><g font-family="Segoe UI,Arial"><text x="115" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">ADD TO CART</text><text x="115" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">5.900</text><text x="305" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">CHECKOUT</text><text x="305" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">1.480</text><text x="305" y="206" fill="#f47168" font-size="11.5" font-weight="700" text-anchor="middle">25% &#9664; vaza</text><text x="495" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">PAGAMENTO</text><text x="495" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">740</text><text x="495" y="206" fill="#90a0bf" font-size="11.5" text-anchor="middle">50%</text><text x="685" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">PAGO</text><text x="685" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">612</text><text x="685" y="206" fill="#4dd49c" font-size="11.5" font-weight="700" text-anchor="middle">83% aprov.</text></g></svg></div><div class="grid2"><div class="card"><div class="lab risk">Risco · o ralo</div><h4>75% abandonam o checkout</h4><p>De 5.900 carrinhos, só <span class="n">1.480 chegam ao checkout</span>. Frete calculado tarde e poucas formas de pagamento são as suspeitas. Referência: 35–45% de avanço.</p></div><div class="card"><div class="lab force">Força</div><h4>Pagamento aprova bem</h4><p><span class="n">83% de aprovação</span> — antifraude e gateway saudáveis. O problema é volume que chega, não o que paga.</p></div><div class="card"><div class="lab note">Ajuste rápido</div><h4>Sem recuperação de carrinho</h4><p>Não há fluxo de e-mail/WhatsApp de carrinho abandonado. <b>1.480 checkouts iniciados</b> sem resgate é dinheiro na mesa.</p></div><div class="card"><div class="lab force">Já em correção</div><h4>Pix em implementação</h4><p>Pix entra no checkout esta semana — costuma subir a conversão de pagamento em e-commerce de moda.</p></div></div></section>
+  <section><div class="eyebrow e-geral"><span class="pill">Resultado</span> em R$</div><h2>O retorno em dinheiro</h2><p class="sub">Faturamento do período, ticket e eficiência da mídia.</p><div class="kpis"><div class="kpi"><div class="kl">Faturamento</div><div class="kv"><span class="js-count" data-raw="R$ 57.500">R$ 57.500</span></div><div class="kd up">&#9650; +9% vs mês ant.</div></div><div class="kpi"><div class="kl">ROAS</div><div class="kv"><span class="js-count" data-raw="3,1x">3,1x</span></div><div class="kd down">&#9660; -0,3x vs mês ant.</div><div class="km">meta: 3,5x</div></div><div class="kpi"><div class="kl">Ticket médio</div><div class="kv"><span class="js-count" data-raw="R$ 94">R$ 94</span></div><div class="kd ">estável</div></div><div class="kpi"><div class="kl">Recup. potencial</div><div class="kv"><span class="js-count" data-raw="R$ 41k">R$ 41k</span></div><div class="kd ">carrinhos abandonados</div><div class="km">com fluxo de resgate</div></div></div></section>
+  <section><div class="eyebrow e-mkt"><span class="pill">Atribuição</span> O que cada criativo trouxe</div><h2>Criativo → pedido</h2><p class="sub">Cruzando o criativo do Meta com o pedido pago na loja (via UTM). Mostra qual peça vende, não só qual tem clique.</p><table class="tbl"><thead><tr><th>Criativo</th><th>Sessões</th><th>Carrinho</th><th>Pedidos</th><th>ROAS</th></tr></thead><tbody><tr><td>Vídeo · Coleção Inverno</td><td>31.200</td><td>2.600</td><td>318</td><td>4,2x</td></tr><tr><td>Vídeo · Depoimento</td><td>21.800</td><td>1.700</td><td>190</td><td>3,4x</td></tr><tr><td>Estático · Vitrine</td><td>18.400</td><td>980</td><td>74</td><td>1,6x</td></tr><tr><td>Estático · Promo</td><td>12.800</td><td>620</td><td>30</td><td>0,9x</td></tr></tbody></table></section>
+  <div class="close"><div class="ct">A conclusão</div><p>A Lumière <b style="color:#fff">não tem problema de tráfego</b> — tem problema de loja. A mídia entrega sessão barata e crescente; o funil aperta no carrinho e, principalmente, no checkout.</p><p><span class="tag ">Mídia:</span> escalar os 2 vídeos vencedores, rotacionar estático e ativar remarketing de produto visto.</p><p><span class="tag c">Loja:</span> consertar o checkout (frete antecipado + Pix) e ligar recuperação de carrinho — é o retorno mais rápido.</p></div>
+  <section style="border-bottom:none;"><div class="eyebrow e-geral"><span class="pill">Plano</span> próximos passos</div><h2>O que destrava cada etapa</h2><div class="plan"><div class="pl"><div class="sd c">Comercial</div><div class="ax"><b>Ativar recuperação de carrinho (e-mail + WhatsApp)</b><small>resgata parte dos R$ 41k abandonados</small></div><div class="pz">Imediato</div></div><div class="pl"><div class="sd c">Comercial</div><div class="ax"><b>Checkout: frete antecipado + Pix</b><small>ataca o abandono de 75%</small></div><div class="pz">Esta semana</div></div><div class="pl"><div class="sd m">Marketing</div><div class="ax"><b>Escalar verba nos 2 vídeos (ROAS 4,2x e 3,4x)</b><small>mais sessão qualificada no mesmo custo</small></div><div class="pz">2-3 dias</div></div><div class="pl"><div class="sd m">Marketing</div><div class="ax"><b>Reativar remarketing de produto visto</b><small>público mais barato de converter</small></div><div class="pz">2-3 dias</div></div><div class="pl"><div class="sd m">Marketing</div><div class="ax"><b>Rotação de criativo estático (frequência 4,1x)</b><small>evita subida de CPM</small></div><div class="pz">Esta semana</div></div></div></section>
+  <footer>Relatório gerado por A Ordem · Mídia: Meta Graph API v19.0 · Loja: e-commerce (checkout/pedidos via plataforma) · Dados fictícios de exemplo.</footer>
+</div>
+
+<script>
+(function(){
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(el){
+    var raw = el.getAttribute('data-raw')||el.textContent;
+    var m = raw.match(/[\d.]+/); if(!m){return;}
+    var target = parseInt(m[0].replace(/[^\d]/g,''),10); if(!target){return;}
+    var pre = raw.slice(0,m.index), suf = raw.slice(m.index+m[0].length), steps=38, i=0;
+    var t=setInterval(function(){
+      i++; var cur=Math.min(target, Math.round(target*i/steps));
+      el.textContent = pre + cur.toLocaleString('pt-BR') + suf;
+      if(i>=steps){el.textContent = pre + target.toLocaleString('pt-BR') + suf; clearInterval(t);}
+    }, 22);
+  }
+  var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.js-count').forEach(count);
+      io.unobserve(e.target);
+    }});
+  },{threshold:.12}) : null;
+  document.addEventListener('DOMContentLoaded', function(){
+    if(rm || !io){ document.querySelectorAll('.js-count').forEach(count);
+      document.querySelectorAll('.reveal').forEach(function(x){x.classList.add('in');}); return; }
+    document.querySelectorAll('section,.close,header').forEach(function(s){
+      s.classList.add('reveal'); io.observe(s);
+    });
+    document.querySelectorAll('header .js-count').forEach(count);
+  });
+})();
+</script>
+</body>
+</html>

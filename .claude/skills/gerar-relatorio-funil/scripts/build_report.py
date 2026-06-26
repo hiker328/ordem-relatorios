@@ -262,10 +262,12 @@ def render(dados, animate=True):
     primaria = m.get("cor_primaria", "#F4B321")
     secundaria = m.get("cor_secundaria", "#3ec8cf")
     fundo = m.get("cor_fundo", "#02112F")
+    gold2 = m.get("cor_primaria_clara", "#ffd87a")
+    teal2 = m.get("cor_secundaria_clara", "#7fe3e8")
     m["_mkt_a"] = m.get("cor_marketing_a", primaria)
-    m["_mkt_b"] = m.get("cor_marketing_b", "#ffd87a")
+    m["_mkt_b"] = m.get("cor_marketing_b", gold2)
     m["_com_a"] = m.get("cor_comercial_a", secundaria)
-    m["_com_b"] = m.get("cor_comercial_b", "#7fe3e8")
+    m["_com_b"] = m.get("cor_comercial_b", teal2)
 
     cab = dados.get("cabecalho", {})
     logo = m.get("logo")
@@ -317,7 +319,7 @@ def render(dados, animate=True):
     return TEMPLATE.format(
         lang="pt-BR",
         title=esc(cab.get("titulo_aba", cab.get("titulo", "Relatório de Funil"))),
-        bg=fundo, gold=primaria, teal=secundaria,
+        bg=fundo, gold=primaria, teal=secundaria, gold2=gold2, teal2=teal2,
         anim_css=(ANIM_CSS if animate else ""), anim_js=(ANIM_JS if animate else ""),
         brand_html=brand_html, brand_line=esc(cab.get("brand_line", "")),
         titulo=titulo, lede=cab.get("lede", ""), stamps=stamps, funis=funis,
@@ -376,7 +378,7 @@ TEMPLATE = '''<!DOCTYPE html>
 <style>
   :root{{
     --bg:{bg}; --bg2:#051831; --ink:#e9eefa; --mut:#90a0bf; --mut2:#5c6d8d;
-    --gold:{gold}; --gold2:#ffd87a; --teal:{teal}; --teal2:#7fe3e8;
+    --gold:{gold}; --gold2:{gold2}; --teal:{teal}; --teal2:{teal2};
     --green:#4dd49c; --red:#f47168; --amber:#efad45;
     --line:rgba(255,255,255,.07); --line2:rgba(255,255,255,.12);
   }}

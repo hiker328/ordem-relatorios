@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funil Norte · Clínica Vitalis · 30 dias</title>
+<style>
+  :root{
+    --bg:#0B1220; --bg2:#051831; --ink:#e9eefa; --mut:#90a0bf; --mut2:#5c6d8d;
+    --gold:#F97316; --gold2:#FDBA74; --teal:#3B82F6; --teal2:#93C5FD;
+    --green:#4dd49c; --red:#f47168; --amber:#efad45;
+    --line:rgba(255,255,255,.07); --line2:rgba(255,255,255,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',-apple-system,Roboto,Helvetica,Arial,sans-serif;background:#000;color:var(--ink);font-size:14px;line-height:1.62;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{max-width:860px;margin:0 auto;background:radial-gradient(120% 60% at 80% 0%,#0a2349 0%,var(--bg) 45%,var(--bg2) 100%);}
+  header{padding:60px 60px 44px;border-bottom:1px solid var(--line);}
+  .brand{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:700;display:flex;align-items:center;gap:11px;}
+  .brand::before{content:'';width:26px;height:1px;background:var(--gold);}
+  h1{font-size:38px;font-weight:800;letter-spacing:-1.2px;line-height:1.06;margin:20px 0 16px;}
+  h1 em{font-style:normal;color:var(--gold2);}
+  .lede{font-size:15px;color:#c2cee6;max-width:600px;line-height:1.7;}
+  .lede b{color:#fff;}
+  .stamps{display:flex;gap:0;margin-top:34px;border-top:1px solid var(--line);flex-wrap:wrap;}
+  .stamps>div{flex:1;padding-top:18px;border-right:1px solid var(--line);min-width:120px;}
+  .stamps>div:last-child{border:none;}
+  .stamps .k{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut2);}
+  .stamps .v{font-size:24px;font-weight:300;letter-spacing:-1px;margin-top:6px;}
+  .stamps .v small{font-size:12px;color:var(--gold);letter-spacing:0;}
+  .stamps .sdelta{font-size:11px;font-weight:700;margin-top:4px;color:var(--mut);}
+  .sdelta.up{color:var(--green);} .sdelta.down{color:var(--red);}
+  section{padding:52px 60px;border-bottom:1px solid var(--line);}
+  .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:9px;}
+  .eyebrow .pill{font-size:9px;letter-spacing:1px;padding:2px 9px;border-radius:20px;font-weight:800;}
+  .e-geral{color:var(--ink);} .e-geral .pill{background:rgba(255,255,255,.1);color:#fff;}
+  .e-mkt{color:var(--gold2);} .e-mkt .pill{background:rgba(244,179,33,.16);color:var(--gold2);}
+  .e-com{color:var(--teal2);} .e-com .pill{background:rgba(62,200,207,.16);color:var(--teal2);}
+  h2{font-size:26px;font-weight:700;letter-spacing:-.5px;margin-bottom:8px;}
+  .sub{font-size:13.5px;color:var(--mut);max-width:600px;line-height:1.65;margin-bottom:34px;}
+  .hfun{margin:6px 0 30px;} .hfun svg{width:100%;height:auto;display:block;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .card{border:1px solid var(--line);border-radius:13px;padding:20px 22px;background:rgba(255,255,255,.016);}
+  .card.span{grid-column:1 / -1;}
+  .card .lab{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:800;margin-bottom:8px;}
+  .lab.risk{color:var(--red);} .lab.force{color:var(--green);} .lab.note{color:var(--amber);}
+  .card h4{font-size:15.5px;font-weight:700;color:#fff;margin-bottom:7px;letter-spacing:-.2px;}
+  .card p{font-size:12.8px;color:#bcc8e0;line-height:1.62;}
+  .card p b{color:var(--gold2);font-weight:700;} .card p .n{color:#fff;font-weight:700;}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .kpi{border:1px solid var(--line);border-radius:13px;padding:18px;background:rgba(255,255,255,.016);}
+  .kpi .kl{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--mut2);font-weight:800;}
+  .kpi .kv{font-size:29px;font-weight:300;letter-spacing:-1.5px;margin:7px 0 4px;color:#fff;}
+  .kpi .kd{font-size:11.5px;font-weight:700;color:var(--mut);}
+  .kpi .kd.up{color:var(--green);} .kpi .kd.down{color:var(--red);}
+  .kpi .km{font-size:10.5px;color:var(--mut);margin-top:3px;}
+  .tbl{width:100%;border-collapse:collapse;font-size:12.5px;}
+  .tbl th{text-align:left;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--mut2);font-weight:800;padding:10px 12px;border-bottom:1px solid var(--line2);}
+  .tbl td{padding:11px 12px;border-bottom:1px solid var(--line);color:#cdd8ee;}
+  .tbl td:first-child{color:#fff;font-weight:600;}
+  .tbl tr:last-child td{border-bottom:none;}
+  .pipe{margin-top:6px;}
+  .pi{display:flex;gap:13px;padding:13px 0;border-top:1px solid var(--line);}
+  .pi .pd{width:8px;height:8px;border-radius:50%;margin-top:7px;flex-shrink:0;}
+  .pi .pnm{font-weight:700;color:#fff;font-size:14px;}
+  .pi .pst{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;padding:2px 8px;border-radius:20px;margin-left:9px;}
+  .st-hot{background:rgba(77,212,156,.14);color:var(--green);}
+  .st-warm{background:rgba(239,173,69,.14);color:var(--amber);}
+  .st-cold{background:rgba(244,115,107,.14);color:var(--red);}
+  .pi .pdesc{font-size:12px;color:var(--mut);margin-top:3px;line-height:1.5;}
+  .close{padding:48px 60px;background:linear-gradient(160deg,rgba(244,179,33,.06),transparent 70%);border-bottom:1px solid var(--line);}
+  .close .ct{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px;}
+  .close p{font-size:15px;color:#cfdaef;line-height:1.72;} .close p+p{margin-top:13px;}
+  .close .tag{display:inline-block;min-width:104px;color:var(--gold2);font-weight:700;}
+  .close .tag.c{color:var(--teal2);}
+  .plan{border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-top:20px;}
+  .pl{display:grid;grid-template-columns:124px 1fr 96px;border-top:1px solid var(--line);align-items:center;}
+  .pl:first-child{border-top:none;} .pl>div{padding:16px 20px;}
+  .pl .sd{font-size:9.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;border-left:2px solid;padding-left:12px;}
+  .sd.m{color:var(--gold2);border-color:var(--gold);} .sd.c{color:var(--teal2);border-color:var(--teal);}
+  .pl .ax b{display:block;color:#fff;font-size:14px;line-height:1.35;} .pl .ax small{display:block;color:var(--mut);font-size:11.5px;margin-top:4px;line-height:1.4;}
+  .pl .pz{font-size:11px;color:var(--mut);text-align:right;font-weight:600;}
+  footer{padding:24px 60px 44px;font-size:10.5px;color:var(--mut2);line-height:1.7;}
+  @media print{body{background:var(--bg);font-size:11.5px;}.page{max-width:none;}section{break-inside:avoid;}.reveal{opacity:1!important;transform:none!important;}}
+  @media(max-width:680px){.grid2,.kpis{grid-template-columns:1fr 1fr;}}
+  @media (prefers-reduced-motion: no-preference){
+    .fpoly{opacity:0;transform-box:fill-box;transform-origin:center;animation:fgrow .7s cubic-bezier(.2,.8,.2,1) forwards;}
+    @keyframes fgrow{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:scale(1)}}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.in{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    
+    <div class="brand">Norte Performance · Clínica Vitalis</div>
+    <h1>Lead barato, agenda cheia, <em>cadeira vazia</em>.</h1>
+    <p class="lede">30 dias da Clínica Vitalis: a mídia traz <b>avaliação barata</b> e a recepção agenda bem — mas o <b>comparecimento</b> e o fechamento de tratamento ainda deixam dinheiro na mesa.</p>
+    <div class="stamps"><div><div class="k">Período</div><div class="v">01/06–30/06</div></div><div><div class="k">Investido</div><div class="v"><span class="js-count" data-raw="R$ 4.900">R$ 4.900</span></div><div class="sdelta up">&#9650; estável</div></div><div><div class="k">Leads</div><div class="v"><span class="js-count" data-raw="318">318</span></div><div class="sdelta up">&#9650; +27%</div></div><div><div class="k">Avaliações</div><div class="v"><span class="js-count" data-raw="96">96</span> <small>30%</small></div><div class="sdelta up">&#9650; +12%</div></div><div><div class="k">Tratamentos</div><div class="v"><span class="js-count" data-raw="21">21</span> <small>+6 em rota</small></div></div></div>
+  </header>
+  <section><div class="eyebrow e-geral"><span class="pill">Funil 1</span> Visão geral</div><h2>Do anúncio ao tratamento fechado</h2><p class="sub">Laranja é mídia (até o lead); azul é a clínica (do agendamento ao tratamento). Os pontos de perda estão marcados.</p><div class="hfun"><svg viewBox="0 0 820 391" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g_vendas_m" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#EA580C"/><stop offset="1" stop-color="#FDBA74"/></linearGradient><linearGradient id="g_vendas_c" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#93C5FD"/></linearGradient><filter id="sh_g_vendas" x="-8%" y="-14%" width="116%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.30"/></filter></defs><polygon points="153,22 623,22 591,62 185,62" fill="url(#g_vendas_m)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.00s"/><polygon points="185,69 591,69 559,109 217,109" fill="url(#g_vendas_m)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.10s"/><polygon points="217,116 559,116 526,156 250,156" fill="url(#g_vendas_m)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.20s"/><polygon points="250,197 526,197 494,237 282,237" fill="url(#g_vendas_c)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.30s"/><polygon points="282,244 494,244 462,284 314,284" fill="url(#g_vendas_c)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.40s"/><polygon points="314,291 462,291 430,331 346,331" fill="url(#g_vendas_c)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.50s"/><polygon points="346,338 430,338 430,378 346,378" fill="url(#g_vendas_c)" filter="url(#sh_g_vendas)" class="fpoly" style="animation-delay:0.60s"/><line x1="60" y1="176" x2="760" y2="176" stroke="rgba(255,255,255,.14)" stroke-dasharray="2 5"/><text x="388" y="170" text-anchor="middle" fill="#7184a6" font-size="10" letter-spacing="2">HANDOFF &#183; MARKETING &#8594; COMERCIAL</text><g font-family="Segoe UI,Arial"><text x="135" y="46" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Impressões</text><text x="645" y="42" fill="#fff" font-size="21" font-weight="700" text-anchor="start">182.000</text><text x="135" y="93" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Cliques</text><text x="645" y="89" fill="#fff" font-size="21" font-weight="700" text-anchor="start">3.040</text><text x="645" y="106" fill="#90a0bf" font-size="11.5" text-anchor="start">1,7% CTR</text><text x="135" y="140" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Leads</text><text x="645" y="136" fill="#fff" font-size="21" font-weight="700" text-anchor="start">318</text><text x="645" y="153" fill="#4dd49c" font-size="11.5" text-anchor="start">10,5% do clique</text><text x="135" y="221" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Agendaram</text><text x="645" y="217" fill="#fff" font-size="21" font-weight="700" text-anchor="start">142</text><text x="645" y="234" fill="#90a0bf" font-size="11.5" text-anchor="start">45% dos leads</text><text x="135" y="268" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Compareceram</text><text x="645" y="264" fill="#fff" font-size="21" font-weight="700" text-anchor="start">96</text><text x="645" y="281" fill="#f47168" font-size="11.5" text-anchor="start">68% (32% no-show) &#9664; vaza</text><text x="135" y="315" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Aceitaram plano</text><text x="645" y="311" fill="#fff" font-size="21" font-weight="700" text-anchor="start">34</text><text x="645" y="328" fill="#90a0bf" font-size="11.5" text-anchor="start">35% das avaliações</text><text x="135" y="362" fill="#aebbd6" font-size="13" font-weight="600" text-anchor="end">Tratamento</text><text x="645" y="358" fill="#fff" font-size="21" font-weight="700" text-anchor="start">21</text><text x="645" y="375" fill="#4dd49c" font-size="11.5" text-anchor="start">+6 em rota</text></g></svg></div><div class="card span" style="margin-top:26px;"><div class="lab note">A leitura de uma frase</div><h4>O furo é o no-show, não a venda.</h4><p>Lead barato e recepção agendando bem (<span class="n">45%</span>). Mas <span class="n">32% não comparecem</span> à avaliação — é o maior ralo. Quem senta na cadeira aceita o plano em ritmo saudável.</p></div></section><section><div class="eyebrow e-mkt"><span class="pill">Funil 2</span> Topo · mídia</div><h2>Geração de avaliações</h2><p class="sub">Lead barato e qualificado. A campanha de uma região concentra os melhores resultados.</p><div class="hfun"><svg viewBox="0 0 800 216" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g_marketing_m" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#EA580C"/><stop offset="1" stop-color="#FDBA74"/></linearGradient><linearGradient id="g_marketing_c" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#93C5FD"/></linearGradient><filter id="sh_g_marketing" x="-8%" y="-14%" width="116%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.30"/></filter></defs><polygon points="20,37 205,45 205,179 20,187" fill="url(#g_marketing_m)" filter="url(#sh_g_marketing)" class="fpoly" style="animation-delay:0.00s"/><polygon points="210,45 395,53 395,171 210,179" fill="url(#g_marketing_m)" filter="url(#sh_g_marketing)" class="fpoly" style="animation-delay:0.10s"/><polygon points="400,53 585,61 585,163 400,171" fill="url(#g_marketing_m)" filter="url(#sh_g_marketing)" class="fpoly" style="animation-delay:0.20s"/><polygon points="590,61 775,61 775,163 590,163" fill="url(#g_marketing_m)" filter="url(#sh_g_marketing)" class="fpoly" style="animation-delay:0.30s"/><g font-family="Segoe UI,Arial"><text x="115" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">IMPRESSÕES</text><text x="115" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">182.000</text><text x="305" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">CLIQUES</text><text x="305" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">3.040</text><text x="305" y="206" fill="#90a0bf" font-size="11.5" text-anchor="middle">1,7% CTR</text><text x="495" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">LEADS</text><text x="495" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">318</text><text x="495" y="206" fill="#4dd49c" font-size="11.5" font-weight="700" text-anchor="middle">CPL R$ 15,40</text><text x="685" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">QUALIFICADOS</text><text x="685" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">142</text><text x="685" y="206" fill="#f47168" font-size="11.5" font-weight="700" text-anchor="middle">45% &#9664; vaza</text></g></svg></div><div class="grid2"><div class="card"><div class="lab force">Força</div><h4>CPL competitivo</h4><p>Custo por lead de <b>R$ 15,40</b>, ótimo para o setor. A oferta de avaliação gratuita converte o clique muito bem.</p></div><div class="card"><div class="lab risk">Risco</div><h4>1 anúncio sustenta tudo</h4><p>Um único criativo responde por <span class="n">88% dos leads</span>. Sem rotação, a fadiga derruba o resultado em semanas.</p></div><div class="card"><div class="lab note">Oportunidade</div><h4>Bairro vencedor</h4><p>Leads do bairro central convertem <b>2x mais</b> em comparecimento. Concentrar verba lá melhora o funil inteiro.</p></div><div class="card"><div class="lab force">Força</div><h4>Formulário enxuto</h4><p>Form de 3 campos mantém o lead barato sem perder qualidade. Manter.</p></div></div></section><section><div class="eyebrow e-com"><span class="pill">Funil 3</span> Fundo · clínica</div><h2>Recepção e fechamento</h2><p class="sub">Do lead ao tratamento. O comparecimento é o ponto fraco; o fechamento pós-avaliação é saudável.</p><div class="hfun"><svg viewBox="0 0 800 216" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g_comercial_m" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#93C5FD"/></linearGradient><linearGradient id="g_comercial_c" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#93C5FD"/></linearGradient><filter id="sh_g_comercial" x="-8%" y="-14%" width="116%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.30"/></filter></defs><polygon points="20,37 167,43 167,181 20,187" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.00s"/><polygon points="172,43 319,49 319,175 172,181" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.10s"/><polygon points="324,49 471,55 471,169 324,175" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.20s"/><polygon points="476,55 623,61 623,163 476,169" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.30s"/><polygon points="628,61 775,61 775,163 628,163" fill="url(#g_comercial_m)" filter="url(#sh_g_comercial)" class="fpoly" style="animation-delay:0.40s"/><g font-family="Segoe UI,Arial"><text x="96" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">LEADS</text><text x="96" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">318</text><text x="248" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">AGENDARAM</text><text x="248" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">142</text><text x="248" y="206" fill="#90a0bf" font-size="11.5" text-anchor="middle">45%</text><text x="400" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">COMPARECERAM</text><text x="400" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">96</text><text x="400" y="206" fill="#f47168" font-size="11.5" font-weight="700" text-anchor="middle">68% &#9664; vaza</text><text x="552" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">ACEITARAM</text><text x="552" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">34</text><text x="552" y="206" fill="#90a0bf" font-size="11.5" text-anchor="middle">35%</text><text x="704" y="18" fill="#7e8eae" font-size="11" letter-spacing="1" text-anchor="middle">TRATAMENTO</text><text x="704" y="120" fill="#0c1a14" font-size="26" font-weight="800" text-anchor="middle">21</text><text x="704" y="206" fill="#4dd49c" font-size="11.5" font-weight="700" text-anchor="middle">+6 em rota</text></g></svg></div><div class="grid2"><div class="card"><div class="lab risk">Risco · o ralo</div><h4>No-show de 32%</h4><p>De 142 agendamentos, <span class="n">46 não compareceram</span>. Sem lembrete ativo no dia anterior. Referência com confirmação: 10–15% de no-show.</p></div><div class="card"><div class="lab force">Força</div><h4>Avaliação que converte</h4><p>Quem comparece aceita o plano em <b>35%</b> — a dentista/avaliador conduz bem. O motor pós-cadeira funciona.</p></div><div class="card"><div class="lab note">Ajuste rápido</div><h4>Sem confirmação automática</h4><p>Implantar confirmação por WhatsApp (D-1 e dia) deve recuperar boa parte dos 46 faltantes — lead já pago.</p></div><div class="card"><div class="lab force">Já em correção</div><h4>Lista de espera ativa</h4><p>Encaixe de cancelamentos começou a ser usado, reduzindo cadeira ociosa.</p></div></div></section>
+  <section><div class="eyebrow e-geral"><span class="pill">Resultado</span> em R$</div><h2>O retorno em dinheiro</h2><p class="sub">Receita de tratamentos fechados e eficiência sobre o investido.</p><div class="kpis"><div class="kpi"><div class="kl">Receita</div><div class="kv"><span class="js-count" data-raw="R$ 63.000">R$ 63.000</span></div><div class="kd up">&#9650; +18% vs mês ant.</div></div><div class="kpi"><div class="kl">ROAS</div><div class="kv"><span class="js-count" data-raw="12,8x">12,8x</span></div><div class="kd up">&#9650; +1,9x</div><div class="km">meta: 10x</div></div><div class="kpi"><div class="kl">Ticket médio</div><div class="kv"><span class="js-count" data-raw="R$ 3.000">R$ 3.000</span></div><div class="kd ">plano de tratamento</div></div><div class="kpi"><div class="kl">Custo/avaliação</div><div class="kv"><span class="js-count" data-raw="R$ 51">R$ 51</span></div><div class="kd up">&#9650; -8% vs mês ant.</div></div></div></section>
+  <section><div class="eyebrow e-com"><span class="pill">Por atendente</span> Recepção / fechamento</div><h2>Quem confirma e quem fecha</h2><p class="sub">Ciclo médio do lead ao tratamento: 11 dias. Use com a suíte ordem-skills para treinar o ponto fraco de cada um.</p><table class="tbl"><thead><tr><th>Atendente</th><th>Agendou</th><th>Compareceu</th><th>Aceitou</th><th>Taxa</th></tr></thead><tbody><tr><td>Bia (recepção)</td><td>82</td><td>62</td><td>—</td><td>76%</td></tr><tr><td>Léo (recepção)</td><td>60</td><td>34</td><td>—</td><td>57%</td></tr><tr><td>Dra. Helena</td><td>—</td><td>—</td><td>34</td><td>35%</td></tr></tbody></table></section>
+  <div class="close"><div class="ct">A conclusão</div><p>A Vitalis <b style="color:#fff">já é lucrativa</b> (ROAS 12,8x) — e dá para subir mais sem gastar um real a mais de mídia: o gargalo é o <b>no-show</b>, não a aquisição nem o fechamento.</p><p><span class="tag ">Mídia:</span> rotacionar criativo e concentrar verba no bairro que mais comparece.</p><p><span class="tag c">Clínica:</span> confirmação automática por WhatsApp (D-1 e dia) para cortar o no-show de 32% — retorno imediato.</p></div>
+  <section style="border-bottom:none;"><div class="eyebrow e-geral"><span class="pill">Plano</span> próximos passos</div><h2>O que destrava o funil</h2><div class="plan"><div class="pl"><div class="sd c">Comercial</div><div class="ax"><b>Confirmação por WhatsApp (D-1 e no dia)</b><small>ataca o no-show de 32% — leads já pagos</small></div><div class="pz">Imediato</div></div><div class="pl"><div class="sd c">Comercial</div><div class="ax"><b>Encaixe de lista de espera em cancelamentos</b><small>reduz cadeira ociosa</small></div><div class="pz">Este mês</div></div><div class="pl"><div class="sd m">Marketing</div><div class="ax"><b>Rotação de criativo (1 anúncio sustenta 88%)</b><small>evita fadiga e queda de lead</small></div><div class="pz">Esta semana</div></div><div class="pl"><div class="sd m">Marketing</div><div class="ax"><b>Concentrar verba no bairro central</b><small>leads de lá comparecem 2x mais</small></div><div class="pz">2-3 dias</div></div></div></section>
+  <footer>Relatório gerado por A Ordem · Mídia: Meta Graph API v19.0 · Comercial: CRM da clínica (agenda/comparecimento) · Dados fictícios de exemplo.</footer>
+</div>
+
+<script>
+(function(){
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(el){
+    var raw = el.getAttribute('data-raw')||el.textContent;
+    var m = raw.match(/[\d.]+/); if(!m){return;}
+    var target = parseInt(m[0].replace(/[^\d]/g,''),10); if(!target){return;}
+    var pre = raw.slice(0,m.index), suf = raw.slice(m.index+m[0].length), steps=38, i=0;
+    var t=setInterval(function(){
+      i++; var cur=Math.min(target, Math.round(target*i/steps));
+      el.textContent = pre + cur.toLocaleString('pt-BR') + suf;
+      if(i>=steps){el.textContent = pre + target.toLocaleString('pt-BR') + suf; clearInterval(t);}
+    }, 22);
+  }
+  var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.js-count').forEach(count);
+      io.unobserve(e.target);
+    }});
+  },{threshold:.12}) : null;
+  document.addEventListener('DOMContentLoaded', function(){
+    if(rm || !io){ document.querySelectorAll('.js-count').forEach(count);
+      document.querySelectorAll('.reveal').forEach(function(x){x.classList.add('in');}); return; }
+    document.querySelectorAll('section,.close,header').forEach(function(s){
+      s.classList.add('reveal'); io.observe(s);
+    });
+    document.querySelectorAll('header .js-count').forEach(count);
+  });
+})();
+</script>
+</body>
+</html>

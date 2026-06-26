@@ -17,6 +17,19 @@ faz a leitura do funil e renderiza o relatório com a identidade visual da marca
 
 São **2 skills** num fluxo: **coletar dados → gerar relatório.**
 
+## Preview
+
+Três exemplos com dados e **paletas diferentes** (a marca define as cores). Veja os
+relatórios completos em [`examples/`](examples/) — abra os `.html` para a versão animada.
+
+| SolarOS (navy + ouro) | Lumière (roxo + verde) | Vitalis (laranja + azul) |
+|:---:|:---:|:---:|
+| ![SolarOS](examples/previews/preview-1.png) | ![Lumière](examples/previews/preview-2.png) | ![Vitalis](examples/previews/preview-3.png) |
+| captação B2B | e-commerce de moda | clínica / saúde |
+
+> Prints do topo (header + funil de vendas). Página inteira em
+> `examples/previews/relatorio-*.png`.
+
 ## Por que existe
 
 Agência boa entrega resultado — mas quase nunca **mostra** isso de forma clara.

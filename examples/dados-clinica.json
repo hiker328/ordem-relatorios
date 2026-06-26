@@ -1,0 +1,127 @@
+{
+  "marca": {
+    "nome": "Norte Performance",
+    "logo": null,
+    "cor_fundo": "#0B1220",
+    "cor_primaria": "#F97316",
+    "cor_primaria_clara": "#FDBA74",
+    "cor_secundaria": "#3B82F6",
+    "cor_secundaria_clara": "#93C5FD",
+    "cor_marketing_a": "#EA580C",
+    "cor_marketing_b": "#FDBA74",
+    "cor_comercial_a": "#2563EB",
+    "cor_comercial_b": "#93C5FD"
+  },
+  "cabecalho": {
+    "titulo_aba": "Funil Norte · Clínica Vitalis · 30 dias",
+    "brand_line": "Norte Performance · Clínica Vitalis",
+    "titulo": "Lead barato, agenda cheia, cadeira vazia.",
+    "titulo_em": "cadeira vazia",
+    "lede": "30 dias da Clínica Vitalis: a mídia traz <b>avaliação barata</b> e a recepção agenda bem — mas o <b>comparecimento</b> e o fechamento de tratamento ainda deixam dinheiro na mesa.",
+    "stamps": [
+      {"k": "Período", "v": "01/06–30/06"},
+      {"k": "Investido", "v": "R$ 4.900", "delta": "estável", "bom": true},
+      {"k": "Leads", "v": "318", "delta": "+27%", "bom": true},
+      {"k": "Avaliações", "v": "96", "small": "30%", "delta": "+12%", "bom": true},
+      {"k": "Tratamentos", "v": "21", "small": "+6 em rota"}
+    ]
+  },
+  "funis": [
+    {
+      "id": "vendas", "pill": "Funil 1", "eyebrow": "Visão geral",
+      "titulo": "Do anúncio ao tratamento fechado",
+      "sub": "Laranja é mídia (até o lead); azul é a clínica (do agendamento ao tratamento). Os pontos de perda estão marcados.",
+      "etapas": [
+        {"nome": "Impressões", "valor": "182.000", "fase": "mkt"},
+        {"nome": "Cliques", "valor": "3.040", "nota": "1,7% CTR", "fase": "mkt"},
+        {"nome": "Leads", "valor": "318", "nota": "10,5% do clique", "tipo": "win", "fase": "mkt"},
+        {"nome": "Agendaram", "valor": "142", "nota": "45% dos leads", "fase": "com"},
+        {"nome": "Compareceram", "valor": "96", "nota": "68% (32% no-show)", "tipo": "leak", "fase": "com"},
+        {"nome": "Aceitaram plano", "valor": "34", "nota": "35% das avaliações", "fase": "com"},
+        {"nome": "Tratamento", "valor": "21", "nota": "+6 em rota", "tipo": "win", "fase": "com"}
+      ],
+      "frase": {
+        "titulo": "O furo é o no-show, não a venda.",
+        "texto": "Lead barato e recepção agendando bem (<span class=\"n\">45%</span>). Mas <span class=\"n\">32% não comparecem</span> à avaliação — é o maior ralo. Quem senta na cadeira aceita o plano em ritmo saudável."
+      }
+    },
+    {
+      "id": "marketing", "pill": "Funil 2", "eyebrow": "Topo · mídia",
+      "titulo": "Geração de avaliações",
+      "sub": "Lead barato e qualificado. A campanha de uma região concentra os melhores resultados.",
+      "etapas": [
+        {"nome": "Impressões", "valor": "182.000"},
+        {"nome": "Cliques", "valor": "3.040", "nota": "1,7% CTR"},
+        {"nome": "Leads", "valor": "318", "nota": "CPL R$ 15,40", "tipo": "win"},
+        {"nome": "Qualificados", "valor": "142", "nota": "45%", "tipo": "leak"}
+      ],
+      "cards": [
+        {"tipo": "force", "label": "Força", "titulo": "CPL competitivo", "texto": "Custo por lead de <b>R$ 15,40</b>, ótimo para o setor. A oferta de avaliação gratuita converte o clique muito bem."},
+        {"tipo": "risk", "label": "Risco", "titulo": "1 anúncio sustenta tudo", "texto": "Um único criativo responde por <span class=\"n\">88% dos leads</span>. Sem rotação, a fadiga derruba o resultado em semanas."},
+        {"tipo": "note", "label": "Oportunidade", "titulo": "Bairro vencedor", "texto": "Leads do bairro central convertem <b>2x mais</b> em comparecimento. Concentrar verba lá melhora o funil inteiro."},
+        {"tipo": "force", "label": "Força", "titulo": "Formulário enxuto", "texto": "Form de 3 campos mantém o lead barato sem perder qualidade. Manter."}
+      ]
+    },
+    {
+      "id": "comercial", "pill": "Funil 3", "eyebrow": "Fundo · clínica",
+      "titulo": "Recepção e fechamento",
+      "sub": "Do lead ao tratamento. O comparecimento é o ponto fraco; o fechamento pós-avaliação é saudável.",
+      "etapas": [
+        {"nome": "Leads", "valor": "318"},
+        {"nome": "Agendaram", "valor": "142", "nota": "45%"},
+        {"nome": "Compareceram", "valor": "96", "nota": "68%", "tipo": "leak"},
+        {"nome": "Aceitaram", "valor": "34", "nota": "35%"},
+        {"nome": "Tratamento", "valor": "21", "nota": "+6 em rota", "tipo": "win"}
+      ],
+      "cards": [
+        {"tipo": "risk", "label": "Risco · o ralo", "titulo": "No-show de 32%", "texto": "De 142 agendamentos, <span class=\"n\">46 não compareceram</span>. Sem lembrete ativo no dia anterior. Referência com confirmação: 10–15% de no-show."},
+        {"tipo": "force", "label": "Força", "titulo": "Avaliação que converte", "texto": "Quem comparece aceita o plano em <b>35%</b> — a dentista/avaliador conduz bem. O motor pós-cadeira funciona."},
+        {"tipo": "note", "label": "Ajuste rápido", "titulo": "Sem confirmação automática", "texto": "Implantar confirmação por WhatsApp (D-1 e dia) deve recuperar boa parte dos 46 faltantes — lead já pago."},
+        {"tipo": "force", "label": "Já em correção", "titulo": "Lista de espera ativa", "texto": "Encaixe de cancelamentos começou a ser usado, reduzindo cadeira ociosa."}
+      ]
+    }
+  ],
+  "resultado": {
+    "titulo": "O retorno em dinheiro",
+    "sub": "Receita de tratamentos fechados e eficiência sobre o investido.",
+    "kpis": [
+      {"label": "Receita", "valor": "R$ 63.000", "delta": "+18% vs mês ant.", "bom": true},
+      {"label": "ROAS", "valor": "12,8x", "delta": "+1,9x", "bom": true, "meta": "meta: 10x"},
+      {"label": "Ticket médio", "valor": "R$ 3.000", "delta": "plano de tratamento", "meta": ""},
+      {"label": "Custo/avaliação", "valor": "R$ 51", "delta": "-8% vs mês ant.", "bom": true}
+    ]
+  },
+  "tabelas": [
+    {
+      "cor": "comercial", "pill": "Por atendente", "eyebrow": "Recepção / fechamento",
+      "titulo": "Quem confirma e quem fecha",
+      "sub": "Ciclo médio do lead ao tratamento: 11 dias. Use com a suíte ordem-skills para treinar o ponto fraco de cada um.",
+      "colunas": ["Atendente", "Agendou", "Compareceu", "Aceitou", "Taxa"],
+      "linhas": [
+        ["Bia (recepção)", "82", "62", "—", "76%"],
+        ["Léo (recepção)", "60", "34", "—", "57%"],
+        ["Dra. Helena", "—", "—", "34", "35%"]
+      ]
+    }
+  ],
+  "conclusao": {
+    "titulo": "A conclusão",
+    "paragrafos": [
+      "A Vitalis <b style=\"color:#fff\">já é lucrativa</b> (ROAS 12,8x) — e dá para subir mais sem gastar um real a mais de mídia: o gargalo é o <b>no-show</b>, não a aquisição nem o fechamento."
+    ],
+    "tags": [
+      {"label": "Mídia", "cor": "m", "texto": "rotacionar criativo e concentrar verba no bairro que mais comparece."},
+      {"label": "Clínica", "cor": "c", "texto": "confirmação automática por WhatsApp (D-1 e dia) para cortar o no-show de 32% — retorno imediato."}
+    ]
+  },
+  "plano": {
+    "titulo": "O que destrava o funil",
+    "itens": [
+      {"setor": "c", "acao": "Confirmação por WhatsApp (D-1 e no dia)", "detalhe": "ataca o no-show de 32% — leads já pagos", "prazo": "Imediato"},
+      {"setor": "c", "acao": "Encaixe de lista de espera em cancelamentos", "detalhe": "reduz cadeira ociosa", "prazo": "Este mês"},
+      {"setor": "m", "acao": "Rotação de criativo (1 anúncio sustenta 88%)", "detalhe": "evita fadiga e queda de lead", "prazo": "Esta semana"},
+      {"setor": "m", "acao": "Concentrar verba no bairro central", "detalhe": "leads de lá comparecem 2x mais", "prazo": "2-3 dias"}
+    ]
+  },
+  "rodape": "Relatório gerado por A Ordem · Mídia: Meta Graph API v19.0 · Comercial: CRM da clínica (agenda/comparecimento) · Dados fictícios de exemplo."
+}

@@ -1,16 +1,22 @@
 # Exemplos
 
-Amostra **fictícia** mostrando a entrada e a saída do relatório de funil.
+Três amostras **fictícias** com dados e paletas diferentes, mostrando entrada e
+saída do relatório de funil. Cada `dados-*.json` é a entrada do `build_report.py`;
+cada `relatorio-*.html` é a saída (abra no navegador para ver animado).
 
-| Arquivo | O que é |
-|---------|---------|
-| `dados-exemplo.json` | Entrada do `build_report.py` (os 3 funis + análise + plano) |
-| `relatorio-exemplo.html` | Saída gerada — abra no navegador para ver o relatório animado |
+| Cenário | Dados | Relatório | Paleta |
+|---------|-------|-----------|--------|
+| Captação de integradores (SolarOS) | `dados-exemplo.json` | `relatorio-exemplo.html` | navy + ouro/teal |
+| E-commerce de moda (Lumière) | `dados-ecommerce.json` | `relatorio-ecommerce.html` | roxo + verde |
+| Clínica / saúde (Vitalis) | `dados-clinica.json` | `relatorio-clinica.html` | laranja + azul |
 
-Regerar:
+`previews/` tem prints PNG de cada um (topo em `preview-*.png`, página inteira em
+`relatorio-*.png`).
+
+Regerar um relatório:
 ```bash
-python .claude/skills/gerar-relatorio-funil/scripts/build_report.py \
-  examples/dados-exemplo.json -o examples/relatorio-exemplo.html
+python ../.claude/skills/gerar-relatorio-funil/scripts/build_report.py \
+  dados-ecommerce.json -o relatorio-ecommerce.html
 ```
 
-> Dados inventados (inspirados num relatório real anonimizado). Nomes/números fictícios.
+> Todos os dados são inventados (nomes, números e empresas fictícios).

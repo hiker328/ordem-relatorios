@@ -1,0 +1,128 @@
+{
+  "marca": {
+    "nome": "Agência Pulse",
+    "logo": null,
+    "cor_fundo": "#160B2E",
+    "cor_primaria": "#A855F7",
+    "cor_primaria_clara": "#D8B4FE",
+    "cor_secundaria": "#34D399",
+    "cor_secundaria_clara": "#A7F3D0",
+    "cor_marketing_a": "#7C3AED",
+    "cor_marketing_b": "#C4B5FD",
+    "cor_comercial_a": "#059669",
+    "cor_comercial_b": "#6EE7B7"
+  },
+  "cabecalho": {
+    "titulo_aba": "Funil Pulse · Moda Lumière · 30 dias",
+    "brand_line": "Agência Pulse · E-commerce Lumière",
+    "titulo": "Tráfego cheio, carrinho vazando.",
+    "titulo_em": "vazando",
+    "lede": "30 dias da loja Lumière: o <b>tráfego</b> escala bem e barato, mas a conversão <b>do clique à compra</b> trava no checkout. O dinheiro está no meio do funil.",
+    "stamps": [
+      {"k": "Período", "v": "01/06–30/06"},
+      {"k": "Investido", "v": "R$ 18.400", "delta": "+22% vs mês ant.", "bom": false},
+      {"k": "Sessões", "v": "84.200", "delta": "+31%", "bom": true},
+      {"k": "Pedidos", "v": "612", "small": "0,7%", "delta": "+9%", "bom": true},
+      {"k": "ROAS", "v": "3,1x", "small": "meta 3,5x"}
+    ]
+  },
+  "funis": [
+    {
+      "id": "vendas", "pill": "Funil 1", "eyebrow": "Visão geral",
+      "titulo": "Do anúncio ao pedido pago",
+      "sub": "A cor muda no handoff: dourado/roxo é mídia (até o carrinho); verde é a loja (do checkout ao pedido pago). Os vazamentos estão marcados.",
+      "etapas": [
+        {"nome": "Impressões", "valor": "1.240.000", "fase": "mkt"},
+        {"nome": "Cliques", "valor": "26.800", "nota": "2,2% CTR", "fase": "mkt"},
+        {"nome": "Sessões", "valor": "84.200", "nota": "tráfego total", "tipo": "win", "fase": "mkt"},
+        {"nome": "Add to cart", "valor": "5.900", "nota": "7% das sessões", "tipo": "leak", "fase": "mkt"},
+        {"nome": "Checkout", "valor": "1.480", "nota": "25% do carrinho", "tipo": "leak", "fase": "com"},
+        {"nome": "Pagamento", "valor": "740", "nota": "50% do checkout", "fase": "com"},
+        {"nome": "Pedido pago", "valor": "612", "nota": "83% aprovados", "tipo": "win", "fase": "com"}
+      ],
+      "frase": {
+        "titulo": "O tráfego faz o trabalho; o checkout desfaz.",
+        "texto": "A mídia entrega sessão barata e em volume crescente. Mas <span class=\"n\">só 7% adicionam ao carrinho</span> e <span class=\"n\">75% abandonam no checkout</span>. Aprovação de pagamento está saudável (83%). O ganho está no meio: página de produto e checkout."
+      }
+    },
+    {
+      "id": "marketing", "pill": "Funil 2", "eyebrow": "Topo · mídia",
+      "titulo": "Aquisição de tráfego",
+      "sub": "Tráfego escala com CTR alto e custo por sessão baixo. O criativo de vídeo puxa o resultado; estático está saturando.",
+      "etapas": [
+        {"nome": "Impressões", "valor": "1.240.000"},
+        {"nome": "Cliques", "valor": "26.800", "nota": "2,2% CTR"},
+        {"nome": "Sessões", "valor": "84.200", "nota": "custo/sessão R$ 0,22", "tipo": "win"},
+        {"nome": "Add to cart", "valor": "5.900", "nota": "7%", "tipo": "leak"}
+      ],
+      "cards": [
+        {"tipo": "force", "label": "Força", "titulo": "Vídeo carrega a conta", "texto": "Os 3 criativos de vídeo respondem por <b>71% das sessões</b> com CPC 40% menor que o estático. <span class=\"n\">Espaço claro para escalar verba no vídeo</span>."},
+        {"tipo": "risk", "label": "Risco", "titulo": "Estático saturando", "texto": "Frequência <b>4,1x</b> nos estáticos e CTR caindo na 4ª semana. Sem rotação, o CPM sobe."},
+        {"tipo": "risk", "label": "Risco · crítico", "titulo": "Carrinho a 7%", "texto": "A taxa de add-to-cart (<span class=\"n\">7%</span>) está abaixo da referência de moda (10–12%). A página de produto não converte o clique pago."},
+        {"tipo": "note", "label": "Oportunidade", "titulo": "Públicos quentes ociosos", "texto": "Remarketing de quem viu produto mas não comprou está com <b>verba mínima</b>. É o público mais barato de converter."}
+      ]
+    },
+    {
+      "id": "comercial", "pill": "Funil 3", "eyebrow": "Fundo · loja/checkout",
+      "titulo": "Conversão na loja",
+      "sub": "Do carrinho ao pedido pago. O abandono de checkout é o maior ralo; a aprovação de pagamento, por outro lado, está ótima.",
+      "etapas": [
+        {"nome": "Add to cart", "valor": "5.900"},
+        {"nome": "Checkout", "valor": "1.480", "nota": "25%", "tipo": "leak"},
+        {"nome": "Pagamento", "valor": "740", "nota": "50%"},
+        {"nome": "Pago", "valor": "612", "nota": "83% aprov.", "tipo": "win"}
+      ],
+      "cards": [
+        {"tipo": "risk", "label": "Risco · o ralo", "titulo": "75% abandonam o checkout", "texto": "De 5.900 carrinhos, só <span class=\"n\">1.480 chegam ao checkout</span>. Frete calculado tarde e poucas formas de pagamento são as suspeitas. Referência: 35–45% de avanço."},
+        {"tipo": "force", "label": "Força", "titulo": "Pagamento aprova bem", "texto": "<span class=\"n\">83% de aprovação</span> — antifraude e gateway saudáveis. O problema é volume que chega, não o que paga."},
+        {"tipo": "note", "label": "Ajuste rápido", "titulo": "Sem recuperação de carrinho", "texto": "Não há fluxo de e-mail/WhatsApp de carrinho abandonado. <b>1.480 checkouts iniciados</b> sem resgate é dinheiro na mesa."},
+        {"tipo": "force", "label": "Já em correção", "titulo": "Pix em implementação", "texto": "Pix entra no checkout esta semana — costuma subir a conversão de pagamento em e-commerce de moda."}
+      ]
+    }
+  ],
+  "resultado": {
+    "titulo": "O retorno em dinheiro",
+    "sub": "Faturamento do período, ticket e eficiência da mídia.",
+    "kpis": [
+      {"label": "Faturamento", "valor": "R$ 57.500", "delta": "+9% vs mês ant.", "bom": true},
+      {"label": "ROAS", "valor": "3,1x", "delta": "-0,3x vs mês ant.", "bom": false, "meta": "meta: 3,5x"},
+      {"label": "Ticket médio", "valor": "R$ 94", "delta": "estável", "meta": ""},
+      {"label": "Recup. potencial", "valor": "R$ 41k", "delta": "carrinhos abandonados", "meta": "com fluxo de resgate"}
+    ]
+  },
+  "tabelas": [
+    {
+      "cor": "marketing", "pill": "Atribuição", "eyebrow": "O que cada criativo trouxe",
+      "titulo": "Criativo → pedido",
+      "sub": "Cruzando o criativo do Meta com o pedido pago na loja (via UTM). Mostra qual peça vende, não só qual tem clique.",
+      "colunas": ["Criativo", "Sessões", "Carrinho", "Pedidos", "ROAS"],
+      "linhas": [
+        ["Vídeo · Coleção Inverno", "31.200", "2.600", "318", "4,2x"],
+        ["Vídeo · Depoimento", "21.800", "1.700", "190", "3,4x"],
+        ["Estático · Vitrine", "18.400", "980", "74", "1,6x"],
+        ["Estático · Promo", "12.800", "620", "30", "0,9x"]
+      ]
+    }
+  ],
+  "conclusao": {
+    "titulo": "A conclusão",
+    "paragrafos": [
+      "A Lumière <b style=\"color:#fff\">não tem problema de tráfego</b> — tem problema de loja. A mídia entrega sessão barata e crescente; o funil aperta no carrinho e, principalmente, no checkout."
+    ],
+    "tags": [
+      {"label": "Mídia", "cor": "m", "texto": "escalar os 2 vídeos vencedores, rotacionar estático e ativar remarketing de produto visto."},
+      {"label": "Loja", "cor": "c", "texto": "consertar o checkout (frete antecipado + Pix) e ligar recuperação de carrinho — é o retorno mais rápido."}
+    ]
+  },
+  "plano": {
+    "titulo": "O que destrava cada etapa",
+    "itens": [
+      {"setor": "c", "acao": "Ativar recuperação de carrinho (e-mail + WhatsApp)", "detalhe": "resgata parte dos R$ 41k abandonados", "prazo": "Imediato"},
+      {"setor": "c", "acao": "Checkout: frete antecipado + Pix", "detalhe": "ataca o abandono de 75%", "prazo": "Esta semana"},
+      {"setor": "m", "acao": "Escalar verba nos 2 vídeos (ROAS 4,2x e 3,4x)", "detalhe": "mais sessão qualificada no mesmo custo", "prazo": "2-3 dias"},
+      {"setor": "m", "acao": "Reativar remarketing de produto visto", "detalhe": "público mais barato de converter", "prazo": "2-3 dias"},
+      {"setor": "m", "acao": "Rotação de criativo estático (frequência 4,1x)", "detalhe": "evita subida de CPM", "prazo": "Esta semana"}
+    ]
+  },
+  "rodape": "Relatório gerado por A Ordem · Mídia: Meta Graph API v19.0 · Loja: e-commerce (checkout/pedidos via plataforma) · Dados fictícios de exemplo."
+}
